@@ -2,6 +2,13 @@
 #define COREENGINE_H
 
 #include <memory>
+#include <glm/vec2.hpp>
+#include "Window.h"
+#include "Timer.h"
+#include "Debug.h"
+#include "GameInterface.h"
+#include "Scene.h"
+
 
 class CoreEngine
 {
@@ -17,7 +24,15 @@ public:
 
 
 	static CoreEngine* GetInstance();
+	int GetCurrentScene();
+	glm::vec2 GetWindowSize() const;
 
+	void SetGameInterface(GameInterface* gameInterface);
+
+	//Set current scene
+	void SetCurrentScene(int sceneNum_);
+	
+	//Stop engine
 	void Exit();
 
 private:
@@ -31,7 +46,15 @@ private:
 	void Update(const float deltaTime_);
 	void Render();
 
+	Window* window;
 	bool isRunning;
+
+	Timer timer;
+	unsigned int fps;
+
+	GameInterface* gameInterface;
+
+	int currentSceneNum;
 };
 
 #endif // ! COREENGINE_H
