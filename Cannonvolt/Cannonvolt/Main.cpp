@@ -11,6 +11,5 @@ int main(int argc, char* argv[]) {
 
 	CoreEngine::GetInstance()->Run();
 
-
 	return 0;
 }
