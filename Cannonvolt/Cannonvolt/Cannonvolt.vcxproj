@@ -72,16 +72,16 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\GameDev\OpenGL\include;C:\GameDev\SDL\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\GameDev\OpenGL\lib;C:\GameDev\SDL\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\Github\Untitled_Engine\Cannonvolt\SDL2-2.0.12\include;D:\Github\Untitled_Engine\Cannonvolt\SDL2_image-2.0.5\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Github\Untitled_Engine\Cannonvolt\SDL2-2.0.12\lib\x64;D:\Github\Untitled_Engine\Cannonvolt\SDL2_image-2.0.5\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\GameDev\OpenGL\include;C:\GameDev\SDL2-2.0.12\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\GameDev\OpenGL\lib;C:\GameDev\SDL2-2.0.12\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\GameDev\SDL2-2.0.12\include;C:\GameDev\SDL2_image-2.0.5\include;C:\GameDev\glew-2.1.0-32\include;D:\Github\Untitled_Engine\Cannonvolt\Linking\glm\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\GameDev\SDL2-2.0.12\lib\x64;C:\GameDev\SDL2_image-2.0.5\lib\x64;C:\GameDev\glew-2.1.0-32\lib\Release\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -92,13 +92,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\GameDev\OpenGL\include;C:\GameDev\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Github\Untitled_Engine\Cannonvolt\SDL2-2.0.12\include;D:\Github\Untitled_Engine\Cannonvolt\SDL2_image-2.0.5\include;D:\Github\Untitled_Engine\Cannonvolt\Linking\glm\include;C:\GameDev\glew-2.1.0-32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL2.lib;SDL2_image.lib;SDL2main.lib;SDL2test.lib;glew32.lib;glew32s.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\GameDev\SDL\lib;C:\GameDev\OpenGL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Github\Untitled_Engine\Cannonvolt\SDL2-2.0.12\lib\x86;D:\Github\Untitled_Engine\Cannonvolt\SDL2_image-2.0.5\lib\x86;C:\GameDev\glew-2.1.0-32\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -123,12 +123,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\GameDev\SDL2-2.0.12\include;C:\GameDev\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameDev\SDL2-2.0.12\include;C:\GameDev\SDL2_image-2.0.5\include;C:\GameDev\glew-2.1.0-32\include;D:\Github\Untitled_Engine\Cannonvolt\Linking\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL2.lib;SDL2_image.lib;SDL2main.lib;SDL2test.lib;glew32.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\GameDev\SDL2-2.0.12\lib\x64;C:\GameDev\SDL2_image-2.0.5\lib\x64;C:\GameDev\glew-2.1.0-32\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -148,7 +149,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Engine\Core\CoreEngine.cpp" />
+    <ClCompile Include="Engine\Core\Debug.cpp" />
+    <ClCompile Include="Engine\Core\Scene.cpp" />
+    <ClCompile Include="Engine\Core\Timer.cpp" />
+    <ClCompile Include="Engine\Core\Window.cpp" />
+    <ClCompile Include="Game\SceneManager.cpp" />
     <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\Core\CoreEngine.h" />
+    <ClInclude Include="Engine\Core\Debug.h" />
+    <ClInclude Include="Engine\Core\GameInterface.h" />
+    <ClInclude Include="Engine\Core\Scene.h" />
+    <ClInclude Include="Engine\Core\Timer.h" />
+    <ClInclude Include="Engine\Core\Window.h" />
+    <ClInclude Include="Game\SceneManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

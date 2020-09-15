@@ -17,7 +17,7 @@ SceneManager::~SceneManager()
 bool SceneManager::OnCreate()
 {
 	if (CoreEngine::GetInstance()->GetCurrentScene() == 0) {
-		currentScene = new StartScene();
+		//currentScene = new StartScene();
 		if (!currentScene->OnCreate()) {
 			Debug::FatalError("Scene has failed on create", "Game1", __LINE__);
 			return false;

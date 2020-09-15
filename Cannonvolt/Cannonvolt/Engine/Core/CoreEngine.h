@@ -2,7 +2,7 @@
 #define COREENGINE_H
 
 #include <memory>
-#include <glm/vec2.hpp>
+#include <glm.hpp>
 #include "Window.h"
 #include "Timer.h"
 #include "Debug.h"

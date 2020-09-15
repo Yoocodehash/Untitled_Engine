@@ -5,7 +5,7 @@
 
 std::unique_ptr<CoreEngine> CoreEngine::engineInstance = nullptr;
 
-CoreEngine::CoreEngine() : window(nullptr), isRunning(false), fps(120), gameInterface(nullptr), currentSceneNum(0), camera(nullptr) {
+CoreEngine::CoreEngine() : window(nullptr), isRunning(false), fps(120), gameInterface(nullptr), currentSceneNum(0) {
 	
 }
 
@@ -46,8 +46,6 @@ void CoreEngine::Run()
 {
 	while (isRunning) {
 		timer.UpdateFrameTicks();
-
-		EventListener::Update();
 
 		Update(timer.GetDeltaTime());
 
