@@ -2,12 +2,21 @@
 #define COREENGINE_H
 
 #include <memory>
-#include <glm.hpp>
 #include "Window.h"
 #include "Timer.h"
 #include "Debug.h"
 #include "GameInterface.h"
 #include "Scene.h"
+
+#include "../Rendering/3D/GameObject.h"
+#include "../Rendering/SceneGraph.h"
+
+#include "../Graphics/ShaderHandler.h"
+#include "../Graphics/TextureHandler.h"
+
+#include "../Camera/Camera.h"
+
+#include "../Events/EventListener.h"
 
 
 class CoreEngine
@@ -26,14 +35,18 @@ public:
 	static CoreEngine* GetInstance();
 	int GetCurrentScene();
 	glm::vec2 GetWindowSize() const;
+	Camera* GetCamera() const;
 
 	void SetGameInterface(GameInterface* gameInterface);
-
-	//Set current scene
 	void SetCurrentScene(int sceneNum_);
+	void SetCamera(Camera* camera_);
 	
-	//Stop engine
 	void Exit();
+
+	void NotifyOfMousePressed(glm::vec2 mouse_);
+	void NotifyOfMouseRelease(glm::vec2 mouse_, int buttonType_);
+	void NotifyOfMouseMove(glm::vec2 mouse_);
+	void NotifyOfMouseScroll(int y_);
 
 private:
 	CoreEngine();
@@ -55,6 +68,8 @@ private:
 	GameInterface* gameInterface;
 
 	int currentSceneNum;
+
+	Camera* camera;
 };
 
 #endif // ! COREENGINE_H

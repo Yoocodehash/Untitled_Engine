@@ -31,6 +31,51 @@
     <Filter Include="Source Files\Engine\Core">
       <UniqueIdentifier>{9ddbee5c-b625-4a9f-9f19-daa0c07e5b06}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Engine\Camera">
+      <UniqueIdentifier>{65ecd114-aacd-47b6-a98f-bdd1b88affa8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Camera">
+      <UniqueIdentifier>{b2d01fbb-e761-4ed5-950b-c68b36e2ffa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Events">
+      <UniqueIdentifier>{f333726b-bd91-476c-aad0-be451060f034}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Events">
+      <UniqueIdentifier>{f435d3d1-f6b0-4bb5-9612-af2b7fc27ef2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\FX">
+      <UniqueIdentifier>{9180b3ce-dcd3-4c9d-bb34-4935507868d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\FX">
+      <UniqueIdentifier>{96ca12d7-0875-4c40-97ce-9a554e589367}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Graphics">
+      <UniqueIdentifier>{e268e379-06ce-4586-af84-a312a93402d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Graphics">
+      <UniqueIdentifier>{050600ba-bd0e-4426-9929-a087e8c5c263}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Math">
+      <UniqueIdentifier>{9b7f7a8f-410b-45e4-a537-57fe9323d82b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Math">
+      <UniqueIdentifier>{907183c5-77d5-4f69-9943-3797a9be4247}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Rendering">
+      <UniqueIdentifier>{07dfa27b-5355-4f31-8fdc-8d4dc17679c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Rendering\2D">
+      <UniqueIdentifier>{fe5bbf73-0812-4d9e-88e7-a6fa1a098738}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Rendering">
+      <UniqueIdentifier>{11869a4e-316d-43b2-a550-58433dcfb633}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Rendering\2D">
+      <UniqueIdentifier>{37418698-18de-4f04-b154-b40555e55a2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Shaders">
+      <UniqueIdentifier>{a4b5a433-0fd0-4090-b547-1c0200b0e73f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -53,6 +98,51 @@
     </ClCompile>
     <ClCompile Include="Engine\Core\Window.cpp">
       <Filter>Source Files\Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Camera\Camera.cpp">
+      <Filter>Source Files\Engine\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Events\EventListener.cpp">
+      <Filter>Source Files\Engine\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Events\MouseEventListener.cpp">
+      <Filter>Source Files\Engine\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\FX\LightSource.cpp">
+      <Filter>Source Files\Engine\FX</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\FX\MaterialLoader.cpp">
+      <Filter>Source Files\Engine\FX</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics\MaterialHandler.cpp">
+      <Filter>Source Files\Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics\ShaderHandler.cpp">
+      <Filter>Source Files\Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics\TextureHandler.cpp">
+      <Filter>Source Files\Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Math\CollisionDetection.cpp">
+      <Filter>Source Files\Engine\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Math\CollisionHandler.cpp">
+      <Filter>Source Files\Engine\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Rendering\SceneGraph.cpp">
+      <Filter>Source Files\Engine\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Rendering\3D\GameObject.cpp">
+      <Filter>Source Files\Engine\Rendering\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Rendering\3D\LoadOBJModel.cpp">
+      <Filter>Source Files\Engine\Rendering\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Rendering\3D\Mesh.cpp">
+      <Filter>Source Files\Engine\Rendering\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Rendering\3D\Model.cpp">
+      <Filter>Source Files\Engine\Rendering\2D</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -77,5 +167,70 @@
     <ClInclude Include="Game\SceneManager.h">
       <Filter>Header Files\Game</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\Camera\Camera.h">
+      <Filter>Header Files\Engine\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Events\EventListener.h">
+      <Filter>Header Files\Engine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Events\MouseEventListener.h">
+      <Filter>Header Files\Engine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\FX\LightSource.h">
+      <Filter>Header Files\Engine\FX</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\FX\MaterialLoader.h">
+      <Filter>Header Files\Engine\FX</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics\MaterialHandler.h">
+      <Filter>Header Files\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics\ShaderHandler.h">
+      <Filter>Header Files\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics\TextureHandler.h">
+      <Filter>Header Files\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Math\BoundingBox.h">
+      <Filter>Header Files\Engine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Math\CollisionDetection.h">
+      <Filter>Header Files\Engine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Math\CollisionHandler.h">
+      <Filter>Header Files\Engine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Math\Ray.h">
+      <Filter>Header Files\Engine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Rendering\SceneGraph.h">
+      <Filter>Header Files\Engine\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Rendering\3D\GameObject.h">
+      <Filter>Header Files\Engine\Rendering\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Rendering\3D\LoadOBJModel.h">
+      <Filter>Header Files\Engine\Rendering\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Rendering\3D\Mesh.h">
+      <Filter>Header Files\Engine\Rendering\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Rendering\3D\Model.h">
+      <Filter>Header Files\Engine\Rendering\2D</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Engine\Shaders\ColourFragmentShader.glsl">
+      <Filter>Header Files\Engine\Shaders</Filter>
+    </None>
+    <None Include="Engine\Shaders\ColourVertexShader.glsl">
+      <Filter>Header Files\Engine\Shaders</Filter>
+    </None>
+    <None Include="Engine\Shaders\FragmentShader.glsl">
+      <Filter>Header Files\Engine\Shaders</Filter>
+    </None>
+    <None Include="Engine\Shaders\VertexShader.glsl">
+      <Filter>Header Files\Engine\Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>
