@@ -13,51 +13,69 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Engine">
+      <UniqueIdentifier>{107cb81c-9799-4989-96b1-b475919d627c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Core">
+      <UniqueIdentifier>{c073d71d-8dff-4014-9eb6-0b4e10091031}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game">
+      <UniqueIdentifier>{9edbfd6e-0fa9-4c58-85ba-26f92336d595}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine">
+      <UniqueIdentifier>{f4d2d626-79f7-4a43-aebe-5a31c5298bea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{ef3fd12e-4cef-4c8a-bb72-6f71493f9ec1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Core">
+      <UniqueIdentifier>{9ddbee5c-b625-4a9f-9f19-daa0c07e5b06}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Core\Window.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\Core\Timer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\Core\Scene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\Core\Debug.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Game\SceneManager.cpp">
+      <Filter>Source Files\Game</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Core\CoreEngine.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Engine\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Game\SceneManager.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Engine\Core\Debug.cpp">
+      <Filter>Source Files\Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Core\Scene.cpp">
+      <Filter>Source Files\Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Core\Timer.cpp">
+      <Filter>Source Files\Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Core\Window.cpp">
+      <Filter>Source Files\Engine\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Core\CoreEngine.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Core\Debug.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Core\GameInterface.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Core\Scene.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Core\Timer.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Core\Window.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="Game\SceneManager.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
