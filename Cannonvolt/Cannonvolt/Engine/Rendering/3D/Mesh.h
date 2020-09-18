@@ -1,10 +1,10 @@
 #ifndef MESH_H
 #define MESH_H
 
-#include <GL/glew.h>
+#include <glew.h>
 #include <vector>
-#include <glm.hpp>
-#include <gtc/type_ptr.hpp>
+#include <glm/glm.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include "../../Camera/Camera.h"
 #include "../../Graphics/MaterialHandler.h"
 

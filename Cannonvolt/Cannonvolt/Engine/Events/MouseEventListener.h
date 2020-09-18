@@ -2,7 +2,7 @@
 #define MOUSEEVENTLISTENER_H
 
 #include <SDL.h>
-#include <glm.hpp>
+#include <glm/glm.hpp>
 
 class CoreEngine;
 

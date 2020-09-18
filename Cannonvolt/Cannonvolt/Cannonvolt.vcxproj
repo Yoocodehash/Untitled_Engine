@@ -72,8 +72,6 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\Github\Untitled_Engine\Cannonvolt\SDL2-2.0.12\include;D:\Github\Untitled_Engine\Cannonvolt\SDL2_image-2.0.5\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Github\Untitled_Engine\Cannonvolt\SDL2-2.0.12\lib\x64;D:\Github\Untitled_Engine\Cannonvolt\SDL2_image-2.0.5\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -92,13 +90,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Github\Untitled_Engine\Cannonvolt\SDL2-2.0.12\include;D:\Github\Untitled_Engine\Cannonvolt\SDL2_image-2.0.5\include;D:\Github\Untitled_Engine\Cannonvolt\Linking\glm\include;C:\GameDev\glew-2.1.0-32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Github\Untitled_Engine\Cannonvolt\Linking\OpenGL\include;D:\Github\Untitled_Engine\Cannonvolt\Linking\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL2.lib;SDL2_image.lib;SDL2main.lib;SDL2test.lib;glew32.lib;glew32s.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Github\Untitled_Engine\Cannonvolt\SDL2-2.0.12\lib\x86;D:\Github\Untitled_Engine\Cannonvolt\SDL2_image-2.0.5\lib\x86;C:\GameDev\glew-2.1.0-32\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Github\Untitled_Engine\Cannonvolt\Linking\OpenGL\lib;D:\Github\Untitled_Engine\Cannonvolt\Linking\SDL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
