@@ -1,5 +1,7 @@
 #pragma once
-class TestScene
+#include "../Engine/Core/Scene.h"
+class TestScene : public Scene 
 {
+
 };
 
