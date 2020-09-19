@@ -147,6 +147,9 @@
     <ClCompile Include="TestScene.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Core\CoreEngine.h">
@@ -222,6 +225,9 @@
       <Filter>Header Files\Engine\Rendering\2D</Filter>
     </ClInclude>
     <ClInclude Include="TestScene.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
       <Filter>Header Files\Game</Filter>
     </ClInclude>
   </ItemGroup>
