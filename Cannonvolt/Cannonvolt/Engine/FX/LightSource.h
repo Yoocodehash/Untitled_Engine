@@ -1,7 +1,7 @@
 #ifndef LIGHTSOURCE_H
 #define LIGHTSOURCE_H
 
-#include <vec3.hpp>
+#include <glm/vec3.hpp>
 class LightSource
 {
 public:

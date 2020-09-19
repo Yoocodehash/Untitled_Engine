@@ -2,7 +2,7 @@
 #define MODEL_H
 
 #include "Mesh.h"
-#include <gtc/matrix_transform.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 #include "LoadOBJModel.h"
 
 class Model

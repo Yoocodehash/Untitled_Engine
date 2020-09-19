@@ -1,7 +1,7 @@
 #ifndef RAY_H
 #define RAY_H
 
-#include <glm.hpp>
+#include <glm/glm.hpp>
 #include "BoundingBox.h"
 #include "CollisionDetection.h"
 

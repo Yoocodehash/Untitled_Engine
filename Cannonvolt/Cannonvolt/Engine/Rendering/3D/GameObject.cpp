@@ -1,12 +1,12 @@
 #include "GameObject.h"
 
-GameObject::GameObject(Model * model_, glm::vec3 position_) : model(nullptr)
+GameObject::GameObject(Model * model_, glm::vec2 position_) : model(nullptr)
 {
 	model = model_;
 	position = position_;
 	angle = 0.0f;
-	rotation = glm::vec3(0.0f, 1.0f, 0.0f);
-	scale = glm::vec3(1.0f);
+	rotation = glm::vec2(0.0f, 1.0f);
+	scale = glm::vec2(1.0f);
 	tag = "";
 	hit = false;
 	if (model) {
@@ -28,7 +28,7 @@ void GameObject::Render(Camera* camera_)
 	}
 }
 
-glm::vec3 GameObject::GetPosition() const
+glm::vec2 GameObject::GetPosition() const
 {
 	return position;
 }
@@ -38,12 +38,12 @@ float GameObject::GetAngle() const
 	return angle;
 }
 
-glm::vec3 GameObject::GetRotation() const
+glm::vec2 GameObject::GetRotation() const
 {
 	return rotation;
 }
 
-glm::vec3 GameObject::GetScale() const
+glm::vec2 GameObject::GetScale() const
 {
 	return scale;
 }
@@ -63,7 +63,7 @@ bool GameObject::GetHit() const
 	return hit;
 }
 
-void GameObject::SetPosition(glm::vec3 position_)
+void GameObject::SetPosition(glm::vec2 position_)
 {
 	position = position_;
 	if (model) {
@@ -81,7 +81,7 @@ void GameObject::SetAngle(float angle_)
 	}
 }
 
-void GameObject::SetRotation(glm::vec3 rotation_)
+void GameObject::SetRotation(glm::vec2 rotation_)
 {
 	rotation = rotation_;
 	if (model) {
@@ -90,7 +90,7 @@ void GameObject::SetRotation(glm::vec3 rotation_)
 	}
 }
 
-void GameObject::SetScale(glm::vec3 scale_)
+void GameObject::SetScale(glm::vec2 scale_)
 {
 	scale = scale_;
 	if (model) {

@@ -6,7 +6,7 @@
 #include <vector>
 #include <SDL.h>
 #include <SDL_image.h>
-#include <GL/glew.h>
+#include <glew.h>
 
 #include "../Core/Debug.h"
 

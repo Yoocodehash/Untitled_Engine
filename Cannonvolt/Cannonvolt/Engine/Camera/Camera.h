@@ -1,11 +1,15 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
-#include <glm.hpp>
-#include <gtc/matrix_transform.hpp>
-#include <matrix.hpp>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/matrix.hpp>
 #include <vector>
 #include "../FX/LightSource.h"
+
+/*
+Used to determine what the player see's
+*/
 
 struct BoundingBox;
 

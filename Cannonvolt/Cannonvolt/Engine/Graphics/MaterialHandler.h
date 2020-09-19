@@ -2,8 +2,8 @@
 #define MATERIALHANDLER_H
 
 #include <memory>
-#include <GL/glew.h>
-#include <glm.hpp>
+#include <glew.h>
+#include <glm/glm.hpp>
 #include <string>
 #include <vector>
 
