@@ -7,6 +7,10 @@
 #include <vector>
 #include "../FX/LightSource.h"
 
+/*
+Used to determine what the player see's
+*/
+
 struct BoundingBox;
 
 class Camera
