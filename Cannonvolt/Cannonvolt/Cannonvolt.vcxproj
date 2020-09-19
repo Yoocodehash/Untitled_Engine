@@ -171,6 +171,7 @@
     <ClCompile Include="Engine\Rendering\SceneGraph.cpp" />
     <ClCompile Include="Game\SceneManager.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="TestScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Camera\Camera.h" />
@@ -197,6 +198,7 @@
     <ClInclude Include="Engine\Rendering\3D\Model.h" />
     <ClInclude Include="Engine\Rendering\SceneGraph.h" />
     <ClInclude Include="Game\SceneManager.h" />
+    <ClInclude Include="TestScene.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Engine\Shaders\ColourFragmentShader.glsl" />
