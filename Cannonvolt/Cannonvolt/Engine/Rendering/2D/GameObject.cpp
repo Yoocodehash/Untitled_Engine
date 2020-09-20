@@ -3,10 +3,9 @@
 //TODO: add in load sprite/sheet into gameobject instead of model
 GameObject::GameObject(Sprite* sprite, glm::vec2 position_)
 {
-	position = position_;
-	angle = 0.0f;
-	rotation = glm::vec2(0.0f, 1.0f);
-	scale = glm::vec2(1.0f);
+	position = glm::vec3(position_,0);
+	rotation = 0;
+	scale = glm::vec3(1.0f,1.0,0);
 	tag = "";
 	hit = false;
 	
@@ -28,22 +27,17 @@ void GameObject::Render(Camera* camera_)
 	}
 }
 
-glm::vec2 GameObject::GetPosition() const
+glm::vec3 GameObject::GetPosition() const
 {
 	return position;
 }
 
-float GameObject::GetAngle() const
-{
-	return angle;
-}
-
-glm::vec2 GameObject::GetRotation() const
+float GameObject::GetRotation() const
 {
 	return rotation;
 }
 
-glm::vec2 GameObject::GetScale() const
+glm::vec3 GameObject::GetScale() const
 {
 	return scale;
 }
@@ -66,37 +60,28 @@ bool GameObject::GetHit() const
 //TODO: do this after the question
 void GameObject::SetPosition(glm::vec2 position_)
 {
-	position = position_;
+	position = glm::vec3(position_,0.0f);
 	if (sprite) {
-		sprite->UpdateInstance(modelInstance, position, angle, rotation, scale);
-		box.transform = model->GetTransform(modelInstance);
+		sprite->SetPosition(position_);
+		box.transform = sprite->GetTransform();
 	}
 }
 
-void GameObject::SetAngle(float angle_)
-{
-	angle = angle_;
-	if (model) {
-		model->UpdateInstance(modelInstance, position, angle, rotation, scale);
-		box.transform = model->GetTransform(modelInstance);
-	}
-}
-
-void GameObject::SetRotation(glm::vec2 rotation_)
+void GameObject::SetRotation(float rotation_)
 {
 	rotation = rotation_;
-	if (model) {
-		model->UpdateInstance(modelInstance, position, angle, rotation, scale);
-		box.transform = model->GetTransform(modelInstance);
+	if (sprite) {
+		sprite->SetRotation(rotation_);
+		box.transform = sprite->GetTransform();
 	}
 }
 
 void GameObject::SetScale(glm::vec2 scale_)
 {
-	scale = scale_;
-	if (model) {
-		model->UpdateInstance(modelInstance, position, angle, rotation, scale);
-		box.transform = model->GetTransform(modelInstance);
+	scale = glm::vec3(scale_,0.0f);
+	if (sprite) {
+		sprite->SetScale(scale_);
+		box.transform = sprite->GetTransform();
 		box.minVert *= scale.x > 1.0f ? scale : (scale / 2.0f);
 		box.maxVert *= scale.x > 1.0f ? scale : (scale / 2.0f);
 	}

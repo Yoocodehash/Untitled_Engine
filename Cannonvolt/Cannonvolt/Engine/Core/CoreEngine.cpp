@@ -25,13 +25,14 @@ bool CoreEngine::OnCreate(std::string name_, int width_, int height_)
 		return isRunning = false;
 	}
 
+	
 	SDL_WarpMouseInWindow(window->GetWindow(), window->GetWidth() / 2, window->GetHeight() / 2);
 
 	MouseEventListener::RegisterEngineObject(this);
 
-	//ShaderHandler::GetInstance()->CreateProgram("basicShader",
-	//	"Engine/Shaders/VertexShader.glsl",
-	//	"Engine/Shaders/FragmentShader.glsl");
+	ShaderHandler::GetInstance()->CreateProgram("basicShader",
+		"Engine/Shaders/VertexShader.glsl",
+		"Engine/Shaders/FragmentShader.glsl");
 
 	if (gameInterface) {
 		if (!gameInterface->OnCreate()) {

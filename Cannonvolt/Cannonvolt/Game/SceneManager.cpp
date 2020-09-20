@@ -1,4 +1,5 @@
 #include "SceneManager.h"
+#include "TestScene.h"
 
 
 
@@ -17,7 +18,7 @@ SceneManager::~SceneManager()
 bool SceneManager::OnCreate()
 {
 	if (CoreEngine::GetInstance()->GetCurrentScene() == 0) {
-		//currentScene = new StartScene();
+		currentScene = new TestScene();
 		if (!currentScene->OnCreate()) {
 			Debug::FatalError("Scene has failed on create", "Game1", __LINE__);
 			return false;
@@ -52,7 +53,7 @@ void SceneManager::BuildScene()
 		
 		break;
 	default:
-		
+		currentScene = new TestScene();
 		break;
 	}
 

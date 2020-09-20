@@ -15,7 +15,6 @@ SceneGraph * SceneGraph::GetInstance()
 
 void SceneGraph::AddSprite(Sprite * sprite_)
 {
-
 	if (sceneSprites.find(sprite_->GetShaderProgram()) == sceneSprites.end()) {
 		std::vector<Sprite*> tmp = std::vector<Sprite*>();
 		tmp.reserve(10);

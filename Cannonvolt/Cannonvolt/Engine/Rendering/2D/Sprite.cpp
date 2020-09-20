@@ -1,17 +1,12 @@
 #include "Sprite.h"
-
-Sprite::Sprite(GLuint shaderProgram_) : depth(0), quadVAO(1), rotation(0)
+#include "../../Core/CoreEngine.h"
+Sprite::Sprite(GLuint shaderProgram_,std::string textureTag_) : depth(0), quadVAO(1), rotation(0)
 {
     shaderProgram = shaderProgram_;
 }
 
 Sprite::~Sprite()
 {
-}
-
-void Sprite::DrawSprite(Texture2D& texture, glm::vec3 color)
-{
-
 }
 
 BoundingBox Sprite::GetBoundingBox()
@@ -24,10 +19,34 @@ glm::mat4 Sprite::GetTransform()
     glm::mat4 model;
 
     model = glm::translate(model, position);
-    model = glm::rotate(model, glm::radians(rotation), glm::vec3(0.0f, 0.0f, 1.0f));
+
+    model = glm::translate(model, glm::vec3(0.5f * scale.x, 0.5f * scale.y, 0.0f)); // move origin of rotation to center of quad
+    model = glm::rotate(model, glm::radians(rotation), glm::vec3(0.0f, 0.0f, 1.0f)); // rotate
+    model = glm::translate(model, glm::vec3(-0.5f * scale.x, -0.5f * scale.y, 0.0f)); // move origin back
+
     model = glm::scale(model, scale);
 
     return model;
+}
+
+glm::vec3 Sprite::GetPosition()
+{
+    return position;
+}
+
+float Sprite::GetRotation()
+{
+    return rotation;
+}
+
+glm::vec3 Sprite::GetScale()
+{
+    return scale;
+}
+
+GLuint Sprite::GetShaderProgram() const
+{
+    return shaderProgram;
 }
 
 void Sprite::initRenderData()
@@ -56,31 +75,49 @@ void Sprite::initRenderData()
     glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
+
+    modelLoc = glGetUniformLocation(shaderProgram, "model");
+    projLoc = glGetUniformLocation(shaderProgram, "projection");
+    //Camera Loc
+
+    //viewPositionLoc = glGetUniformLocation(shaderProgram, "cameraPos");
+}
+
+void Sprite::SetPosition(glm::vec2 position_)
+{
+    position = glm::vec3(position_, 0);
+}
+
+void Sprite::SetRotation(float rotation_)
+{
+    rotation = rotation_;
+}
+
+void Sprite::SetScale(glm::vec2 scale_)
+{
+    scale = glm::vec3(scale_, 0);
 }
 
 void Sprite::Render(Camera* camera_)
 {
-    // prepare transformations
-    ResourceManager::GetInstance()->GetShader(.Use();
+    //Could this system have worked? mabye look into blend for thesprite sheet parse
+   // glEnable(GL_TEXTURE_2D);
+   // glEnable(GL_BLEND);
+   // glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    
+    //GL Proejction
+    //GL othertographic
+    //gl model view
 
-    //TODO:transfer this to updating model/Get Transform
 
-    //model = glm::translate(model, glm::vec3(0.5f * size.x, 0.5f * size.y, 0.0f));
-    //model = glm::rotate(model, glm::radians(rotate), glm::vec3(0.0f, 0.0f, 1.0f));
-    //model = glm::translate(model, glm::vec3(-0.5f * size.x, -0.5f * size.y, 0.0f));
-
- //   model = glm::scale(model, size);
-
-    ResourceManager::GetInstance()->GetShader("sprite").Use().SetInteger("im
-glm::mat4 model = glm::mat4(1.0f);
-    model = glm::translate(model, position);
-    age", 0);
-        ResourceManager::GetInstance()->GetShader("sprite").SetMatrix4("projection", projection);
-    this->shader.SetMatrix4("model", model);
-    this->shader.SetVector3f("spriteColor", color);
+    //TODO: ask if it is a good idea to use SDL_RenderCopy for 2d sprites with this engine because i would say mabye but the window
+    //access issue and is a problem
+    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(GetTransform()));
+    glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(camera_->GetOrthographic()));
 
     glActiveTexture(GL_TEXTURE0);
-    texture.Bind();
+    //TODO: add in parsing for the sprite sheet
+    glBindTexture(GL_TEXTURE_2D, TextureHandler::GetInstance()->GetTexture(textureTag));
 
     glBindVertexArray(this->quadVAO);
     glDrawArrays(GL_TRIANGLES, 0, 6);

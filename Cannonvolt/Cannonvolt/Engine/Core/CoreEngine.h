@@ -11,8 +11,8 @@
 #include "../Rendering/2D/GameObject.h"
 #include "../Rendering/SceneGraph.h"
 
-#include "../Graphics/Shader.h"
-#include "../Graphics/Texture.h"
+#include "../Graphics/ShaderHandler.h"
+#include "../Graphics/TextureHandler.h"
 
 #include "../Camera/Camera.h"
 

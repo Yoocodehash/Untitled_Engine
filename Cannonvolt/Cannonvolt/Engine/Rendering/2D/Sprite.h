@@ -7,20 +7,36 @@ sprite shoould be able to know the texture (sprite sheet) it is working off of a
 */
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include "../../Graphics/ResourceManager.h"
+#include "../../Graphics/ShaderHandler.h"
+#include "../../Graphics/TextureHandler.h"
 #include "../../Math/BoundingBox.h"
 #include "../../Camera/Camera.h"
+#include <glm/gtc/type_ptr.hpp>
+
+//Sprite sheet 
 
 class Sprite
 {
 public:
-    Sprite(GLuint shaderProgram);
+    Sprite(GLuint shaderProgram_,std::string textureTag_);
     ~Sprite();
-    
-    void DrawSprite(Texture2D& texture, glm::vec3 color = glm::vec3(1.0f));
 
+
+    //Getters
     BoundingBox GetBoundingBox();
     glm::mat4 GetTransform();
+    glm::vec3 GetPosition();
+    float GetRotation();
+    glm::vec3 GetScale();
+    GLuint GetShaderProgram() const;
+
+
+    //Setters 
+    //passes vec2 in order to prevent changes to z axis
+    void SetPosition(glm::vec2 position_);
+    void SetRotation(float rotation_);
+    void SetScale(glm::vec2 scale_);
+
 
     void Render(Camera* camera_);
 
@@ -28,8 +44,13 @@ public:
 private:
     BoundingBox box;
     GLuint shaderProgram;
-    Texture2D* texture;
+    std::string textureTag; //Used in render to denote what texture should loaded in here
+ 
     unsigned int quadVAO;
+    GLuint modelLoc, projLoc;
+
+    //GLuint textureLoc;
+    //GLuint viewPositionLoc, lightPosLoc, lightAmbientLoc, lightDiffuseLoc, lightColourLoc;
 
     glm::vec3 position; //Position of sprite
     float rotation; //Rotation of sprite

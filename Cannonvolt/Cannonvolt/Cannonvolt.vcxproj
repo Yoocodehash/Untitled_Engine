@@ -156,9 +156,8 @@
     <ClCompile Include="Engine\Events\EventListener.cpp" />
     <ClCompile Include="Engine\Events\MouseEventListener.cpp" />
     <ClCompile Include="Engine\FX\LightSource.cpp" />
-    <ClCompile Include="Engine\Graphics\ResourceManager.cpp" />
-    <ClCompile Include="Engine\Graphics\Shader.cpp" />
-    <ClCompile Include="Engine\Graphics\Texture.cpp" />
+    <ClCompile Include="Engine\Graphics\ShaderHandler.cpp" />
+    <ClCompile Include="Engine\Graphics\TextureHandler.cpp" />
     <ClCompile Include="Engine\Math\CollisionDetection.cpp" />
     <ClCompile Include="Engine\Math\CollisionHandler.cpp" />
     <ClCompile Include="Engine\Rendering\2D\GameObject.cpp" />
@@ -180,9 +179,8 @@
     <ClInclude Include="Engine\Events\EventListener.h" />
     <ClInclude Include="Engine\Events\MouseEventListener.h" />
     <ClInclude Include="Engine\FX\LightSource.h" />
-    <ClInclude Include="Engine\Graphics\ResourceManager.h" />
-    <ClInclude Include="Engine\Graphics\Shader.h" />
-    <ClInclude Include="Engine\Graphics\Texture.h" />
+    <ClInclude Include="Engine\Graphics\ShaderHandler.h" />
+    <ClInclude Include="Engine\Graphics\TextureHandler.h" />
     <ClInclude Include="Engine\Math\BoundingBox.h" />
     <ClInclude Include="Engine\Math\CollisionDetection.h" />
     <ClInclude Include="Engine\Math\CollisionHandler.h" />
