@@ -191,14 +191,6 @@ bool Camera::FrustumCull(std::vector<glm::vec4> frustum_, BoundingBox* box_)
 			axisVert.y = box_->maxVert.y + box_->transform[3].y;
 		}
 
-		// z-axis
-		if (frustum_[i].z < 0.0f) {
-			axisVert.z = box_->minVert.z + box_->transform[3].z;
-		}
-		else {
-			axisVert.z = box_->maxVert.z + box_->transform[3].z;
-		}
-
 		//Is point outside of frustum
 		if (glm::dot(glm::vec3(planeNormal), axisVert) + planeConst < 0.0f) {
 			return true;

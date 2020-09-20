@@ -1,17 +1,20 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 
-#include "Model.h"
+#include <sstream>
+#include "../../Camera/Camera.h"
+#include "Sprite.h"
+
 
 class GameObject
 {
 public:
-	GameObject(Model* model_, glm::vec2 position_ = glm::vec2());
+	GameObject(Sprite* sprite, glm::vec2 position_ = glm::vec2());
 	~GameObject();
 	void Render(Camera* camera_);
 	virtual void Update(const float deltaTime_) = 0;
 	
-	glm::vec3 GetPosition() const;
+	glm::vec2 GetPosition() const;
 	float GetAngle() const;
 	glm::vec2 GetRotation() const;
 	glm::vec2 GetScale() const;
@@ -28,8 +31,9 @@ public:
 
 
 private:
-	Model* model;
-	int modelInstance;
+	//SpriteSheet* sheet;
+	Sprite* sprite;
+	int spriteInstance;
 
 	glm::vec2 position;
 	float angle;

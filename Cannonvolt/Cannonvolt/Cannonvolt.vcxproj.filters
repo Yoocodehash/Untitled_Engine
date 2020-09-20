@@ -111,18 +111,6 @@
     <ClCompile Include="Engine\FX\LightSource.cpp">
       <Filter>Source Files\Engine\FX</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\FX\MaterialLoader.cpp">
-      <Filter>Source Files\Engine\FX</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\Graphics\MaterialHandler.cpp">
-      <Filter>Source Files\Engine\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\Graphics\ShaderHandler.cpp">
-      <Filter>Source Files\Engine\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\Graphics\TextureHandler.cpp">
-      <Filter>Source Files\Engine\Graphics</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\Math\CollisionDetection.cpp">
       <Filter>Source Files\Engine\Math</Filter>
     </ClCompile>
@@ -132,23 +120,26 @@
     <ClCompile Include="Engine\Rendering\SceneGraph.cpp">
       <Filter>Source Files\Engine\Rendering</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Rendering\3D\GameObject.cpp">
-      <Filter>Source Files\Engine\Rendering\2D</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\Rendering\3D\LoadOBJModel.cpp">
-      <Filter>Source Files\Engine\Rendering\2D</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\Rendering\3D\Mesh.cpp">
-      <Filter>Source Files\Engine\Rendering\2D</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\Rendering\3D\Model.cpp">
-      <Filter>Source Files\Engine\Rendering\2D</Filter>
-    </ClCompile>
-    <ClCompile Include="TestScene.cpp">
+    <ClCompile Include="Game\Character.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
-    <ClCompile Include="Character.cpp">
+    <ClCompile Include="Engine\Rendering\2D\GameObject.cpp">
+      <Filter>Source Files\Engine\Rendering\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\TestScene.cpp">
       <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics\Texture.cpp">
+      <Filter>Source Files\Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics\Shader.cpp">
+      <Filter>Source Files\Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Graphics\ResourceManager.cpp">
+      <Filter>Source Files\Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Rendering\2D\Sprite.cpp">
+      <Filter>Source Files\Engine\Rendering\2D</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -185,18 +176,6 @@
     <ClInclude Include="Engine\FX\LightSource.h">
       <Filter>Header Files\Engine\FX</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\FX\MaterialLoader.h">
-      <Filter>Header Files\Engine\FX</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\Graphics\MaterialHandler.h">
-      <Filter>Header Files\Engine\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\Graphics\ShaderHandler.h">
-      <Filter>Header Files\Engine\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\Graphics\TextureHandler.h">
-      <Filter>Header Files\Engine\Graphics</Filter>
-    </ClInclude>
     <ClInclude Include="Engine\Math\BoundingBox.h">
       <Filter>Header Files\Engine\Math</Filter>
     </ClInclude>
@@ -212,29 +191,29 @@
     <ClInclude Include="Engine\Rendering\SceneGraph.h">
       <Filter>Header Files\Engine\Rendering</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Rendering\3D\GameObject.h">
-      <Filter>Header Files\Engine\Rendering\2D</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\Rendering\3D\LoadOBJModel.h">
-      <Filter>Header Files\Engine\Rendering\2D</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\Rendering\3D\Mesh.h">
-      <Filter>Header Files\Engine\Rendering\2D</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\Rendering\3D\Model.h">
-      <Filter>Header Files\Engine\Rendering\2D</Filter>
-    </ClInclude>
-    <ClInclude Include="TestScene.h">
+    <ClInclude Include="Game\Character.h">
       <Filter>Header Files\Game</Filter>
     </ClInclude>
-    <ClInclude Include="Character.h">
+    <ClInclude Include="Engine\Rendering\2D\GameObject.h">
+      <Filter>Header Files\Engine\Rendering\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\TestScene.h">
       <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics\Shader.h">
+      <Filter>Header Files\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics\Texture.h">
+      <Filter>Header Files\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Graphics\ResourceManager.h">
+      <Filter>Header Files\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Rendering\2D\Sprite.h">
+      <Filter>Header Files\Engine\Rendering\2D</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Engine\Shaders\ColourFragmentShader.glsl">
-      <Filter>Header Files\Engine\Shaders</Filter>
-    </None>
     <None Include="Engine\Shaders\ColourVertexShader.glsl">
       <Filter>Header Files\Engine\Shaders</Filter>
     </None>
@@ -242,6 +221,9 @@
       <Filter>Header Files\Engine\Shaders</Filter>
     </None>
     <None Include="Engine\Shaders\VertexShader.glsl">
+      <Filter>Header Files\Engine\Shaders</Filter>
+    </None>
+    <None Include="Engine\Shaders\ColourFragmentShader.glsl">
       <Filter>Header Files\Engine\Shaders</Filter>
     </None>
   </ItemGroup>

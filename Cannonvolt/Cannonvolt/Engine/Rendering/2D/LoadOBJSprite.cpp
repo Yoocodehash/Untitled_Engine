@@ -1,14 +1,8 @@
-#include "LoadOBJModel.h"
+#include "LoadOBJSprite.h"
 
-LoadOBJModel::LoadOBJModel() : currentMaterial(Material())
+LoadOBJSprite::LoadOBJSprite()
 {
-	vertices.reserve(200);
-	normals.reserve(200);
-	textureCoords.reserve(200);
-	indices.reserve(200);
-	normalIndices.reserve(200);
-	textureIndices.reserve(200);
-	subMeshes.reserve(10);
+
 }
 
 

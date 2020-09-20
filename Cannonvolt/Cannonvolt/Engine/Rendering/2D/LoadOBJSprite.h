@@ -1,20 +1,18 @@
 #ifndef LOADOBJMODEL_H
 #define LOADOBJMODEL_H
 
-#include "Mesh.h"
 #include "../../Core/Debug.h"
-#include "../../FX/MaterialLoader.h"
 #include <sstream>
 #include "../../Math/BoundingBox.h"
+#include <vector>
 
-class LoadOBJModel
+class LoadOBJSprite
 {
 public:
-	LoadOBJModel();
-	~LoadOBJModel();
+	LoadOBJSprite();
+	~LoadOBJSprite();
 
-	void LoadModel(const std::string& objFilePath_);
-	void LoadModel(const std::string& objFilePath_, const std::string& matFilePath_);
+	void LoadSprite(const std::string& objFilePath_);
 
 	std::vector<Vertex> GetVerts();
 	std::vector<int> GetIndices();
@@ -24,14 +22,6 @@ public:
 	void OnDestroy();
 
 private: 
-	std::vector<glm::vec3> vertices;
-	std::vector<glm::vec3> normals;
-	std::vector<glm::vec2> textureCoords;
-	std::vector<int> indices;
-	std::vector<int> normalIndices;
-	std::vector<int> textureIndices;
-	std::vector<Vertex> meshVertices;
-	std::vector<SubMesh> subMeshes;
 
 	void PostProcessing();
 	void LoadMaterial(const std::string& fileName_);

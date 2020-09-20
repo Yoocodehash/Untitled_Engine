@@ -28,11 +28,11 @@ struct Ray {
 	intersectionDist = 0.0f;
 	}
 
-	inline bool IsColliding(BoundingBox* box_) {
+	/*inline bool IsColliding(BoundingBox* box_) {
 		intersectionDist = -1.0f;
 		//intersectionDist = 1.0f;
 		return CollisionDetection::RayObbIntersection(this,box_);
-	}
+	}*/
 
 };
 

@@ -1,30 +1,30 @@
 #include "GameObject.h"
 
-GameObject::GameObject(Model * model_, glm::vec2 position_) : model(nullptr)
+//TODO: add in load sprite/sheet into gameobject instead of model
+GameObject::GameObject(Sprite* sprite, glm::vec2 position_)
 {
-	model = model_;
 	position = position_;
 	angle = 0.0f;
 	rotation = glm::vec2(0.0f, 1.0f);
 	scale = glm::vec2(1.0f);
 	tag = "";
 	hit = false;
-	if (model) {
-		modelInstance = model->CreateInstance(position, angle, rotation, scale);
-		box = model->GetBoundingBox();
-		box.transform = model->GetTransform(modelInstance);
+	
+	if (sprite) {
+		box = sprite->GetBoundingBox();
+		box.transform = sprite->GetTransform();
 	}
 }
 
 GameObject::~GameObject()
 {
-	model = nullptr;
+	
 }
 
 void GameObject::Render(Camera* camera_)
 {
-	if (model) {
-		model->Render(camera_);
+	if (sprite) {
+		sprite->Render(camera_);
 	}
 }
 
@@ -63,11 +63,12 @@ bool GameObject::GetHit() const
 	return hit;
 }
 
+//TODO: do this after the question
 void GameObject::SetPosition(glm::vec2 position_)
 {
 	position = position_;
-	if (model) {
-		model->UpdateInstance(modelInstance, position, angle, rotation, scale);
+	if (sprite) {
+		sprite->UpdateInstance(modelInstance, position, angle, rotation, scale);
 		box.transform = model->GetTransform(modelInstance);
 	}
 }
