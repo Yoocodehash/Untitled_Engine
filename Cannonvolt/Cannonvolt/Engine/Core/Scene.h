@@ -4,8 +4,8 @@
 class Scene
 {
 public:
-	Scene();
-	virtual ~Scene();
+	Scene() {}
+	virtual ~Scene() {}
 
 	virtual bool OnCreate() = 0;
 	virtual void Update(const float deltaTime_) = 0;
