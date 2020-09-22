@@ -138,6 +138,9 @@
     <ClCompile Include="Engine\Graphics\ShaderHandler.cpp">
       <Filter>Source Files\Engine\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\Rendering\2D\SpriteRenderer.cpp">
+      <Filter>Source Files\Engine\Rendering\2D</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Core\CoreEngine.h">
@@ -205,6 +208,9 @@
     </ClInclude>
     <ClInclude Include="Engine\Graphics\ShaderHandler.h">
       <Filter>Header Files\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Rendering\2D\SpriteRenderer.h">
+      <Filter>Header Files\Engine\Rendering\2D</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

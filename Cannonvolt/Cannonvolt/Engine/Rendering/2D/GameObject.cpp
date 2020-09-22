@@ -11,9 +11,9 @@ GameObject::GameObject(Sprite* sprite_, glm::vec2 position_)
 	hit = false;
 
 	if (sprite) {
-		//sprite = sprite_;
+		spriteInstance = sprite->CreateInstance(position, rotation, scale);
 		box = sprite->GetBoundingBox();
-		box.transform = sprite->GetTransform();
+		box.transform = sprite->GetTransform(spriteInstance);
 	}
 }
 
@@ -64,8 +64,8 @@ void GameObject::SetPosition(glm::vec2 position_)
 {
 	position = glm::vec3(position_,0.0f);
 	if (sprite) {
-		sprite->SetPosition(position_);
-		box.transform = sprite->GetTransform();
+		sprite->UpdateInstance(spriteInstance, position,rotation,scale);
+		box.transform = sprite->GetTransform(spriteInstance);
 	}
 }
 
@@ -73,8 +73,8 @@ void GameObject::SetRotation(float rotation_)
 {
 	rotation = rotation_;
 	if (sprite) {
-		sprite->SetRotation(rotation_);
-		box.transform = sprite->GetTransform();
+		sprite->UpdateInstance(spriteInstance, position, rotation, scale);
+		box.transform = sprite->GetTransform(spriteInstance);
 	}
 }
 
@@ -82,8 +82,8 @@ void GameObject::SetScale(glm::vec2 scale_)
 {
 	scale = glm::vec3(scale_,0.0f);
 	if (sprite) {
-		sprite->SetScale(scale_);
-		box.transform = sprite->GetTransform();
+		sprite->UpdateInstance(spriteInstance, position, rotation, scale);
+		box.transform = sprite->GetTransform(spriteInstance);
 		//TODO: Fix scaleing
 		//box.width *= scale.x > 1.0f ? scale : (scale / 2.0f);
 		//box.height *= scale.y > 1.0f ? scale : (scale / 2.0f);
