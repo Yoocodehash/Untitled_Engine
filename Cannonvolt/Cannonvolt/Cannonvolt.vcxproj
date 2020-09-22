@@ -198,6 +198,9 @@
     <None Include="Engine\Shaders\FragmentShader.glsl" />
     <None Include="Engine\Shaders\VertexShader.glsl" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Resources\Textures\Apple_Body.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

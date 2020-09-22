@@ -221,4 +221,9 @@
       <Filter>Header Files\Engine\Shaders</Filter>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Resources\Textures\Apple_Body.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

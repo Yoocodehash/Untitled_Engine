@@ -1,5 +1,6 @@
 #include "TextureHandler.h"
 
+
 std::unique_ptr<TextureHandler> TextureHandler::textureInstance = nullptr;
 std::vector<Texture*> TextureHandler::textures = std::vector<Texture*>();
 
@@ -42,13 +43,15 @@ void TextureHandler::CreateTexture(const std::string& textureName_,
 
 	int mode = surface->format->BytesPerPixel == 4 ? GL_RGBA : GL_RGB;
 
-	glTexImage2D(GL_TEXTURE_2D, 0, mode, surface->w, surface->h, 0,
-		mode, GL_UNSIGNED_BYTE, surface->pixels);
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+	glTexImage2D(GL_TEXTURE_2D, 0, mode, surface->w, surface->h, 0,
+		mode, GL_UNSIGNED_BYTE, surface->pixels);
+
 
 	glGenerateMipmap(GL_TEXTURE_2D);
 
@@ -56,9 +59,10 @@ void TextureHandler::CreateTexture(const std::string& textureName_,
 
 	t->textureWidth = surface->w;
 	t->textureHeight = surface->h;
+	t->textureName = textureName_;
 	t->spriteWidth = spriteWidth_;
 	t->spriteHeight = spriteHeight_;
-	t->textureName = textureName_;
+
 	textures.push_back(t);
 
 	SDL_FreeSurface(surface);
@@ -83,6 +87,33 @@ const Texture* TextureHandler::GetTextureData(const std::string& textureName_)
 		}
 	}
 	return 0;
+}
+
+const void TextureHandler::InitTexture(const std::string fileName_)
+{
+	//Try and get texture
+	GLuint currentTexture = TextureHandler::GetInstance()->GetTexture(fileName_);
+
+	//Create texture if it is not loaded
+	if (currentTexture == 0) {
+		//Get the width and height from the sizeFile
+		std::string sizeFile = "./Resources/Textures/" + fileName_ + ".txt";
+		if (sizeFile == "") {
+			Debug::Error("SizeFile failed to load " + fileName_,
+				"TextureHandler.cpp", __LINE__);
+			return;
+		}
+		std::ifstream in(sizeFile.c_str(), std::ios::in);
+		std::string line;
+		std::getline(in, line);
+		std::istringstream v(line);
+		float width, height;
+		v >> width >> height;
+
+
+		TextureHandler::GetInstance()->CreateTexture(fileName_,
+		"./Resources/Textures/" + fileName_ + ".jpg", width, height);
+	}
 }
 
 TextureHandler::TextureHandler()

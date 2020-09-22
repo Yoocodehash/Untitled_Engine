@@ -18,7 +18,7 @@ sprite shoould be able to know the texture (sprite sheet) it is working off of a
 class Sprite
 {
 public:
-    Sprite(GLuint shaderProgram_,std::string textureTag_);
+    Sprite(GLuint shaderProgram_, const std::string& textureName_);
     ~Sprite();
 
 
@@ -47,7 +47,7 @@ private:
     std::string textureTag; //Used in render to denote what texture should loaded in here
  
     unsigned int quadVAO;
-    GLuint modelLoc, projLoc;
+    GLuint modelLoc, projLoc, color;
 
     //GLuint textureLoc;
     //GLuint viewPositionLoc, lightPosLoc, lightAmbientLoc, lightDiffuseLoc, lightColourLoc;

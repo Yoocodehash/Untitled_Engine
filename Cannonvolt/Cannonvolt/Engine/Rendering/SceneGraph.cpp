@@ -75,10 +75,10 @@ void SceneGraph::Render(Camera * camera_)
 	//TODO: Frustum culling
 	//World space culling (should this be the type i use? only version i found any explantation about)
 
-	std::vector<glm::vec4> frustum;
-	frustum.reserve(6);
+	//std::vector<glm::vec4> frustum;
+	//frustum.reserve(6);
 
-	frustum = camera_->GetFrustumPlanes();
+	//frustum = camera_->GetFrustumPlanes();
 
 	for (auto entry : sceneSprites) {
 
@@ -87,9 +87,9 @@ void SceneGraph::Render(Camera * camera_)
 
 		for (auto m : entry.second) {
 			
-			if (!camera_->FrustumCull(frustum, &m->GetBoundingBox())) {
+			//if (!camera_->FrustumCull(frustum, &m->GetBoundingBox())) {
 				m->Render(camera_);
-			}
+			//}
 		}
 	}
 }

@@ -1,8 +1,16 @@
 #include "Sprite.h"
 #include "../../Core/CoreEngine.h"
-Sprite::Sprite(GLuint shaderProgram_,std::string textureTag_) : depth(0), quadVAO(1), rotation(0)
+Sprite::Sprite(GLuint shaderProgram_, const std::string& textureName_) : depth(0), quadVAO(1), rotation(0)
 {
     shaderProgram = shaderProgram_;
+    textureTag = textureName_;
+    TextureHandler::GetInstance()->InitTexture(textureName_);
+    box = BoundingBox(TextureHandler::GetInstance()->GetTextureData(textureName_)->spriteWidth,
+        TextureHandler::GetInstance()->GetTextureData(textureName_)->spriteHeight,
+        GetTransform());
+    SceneGraph::GetInstance()->AddSprite(this);
+
+    initRenderData();
 }
 
 Sprite::~Sprite()
@@ -78,6 +86,9 @@ void Sprite::initRenderData()
 
     modelLoc = glGetUniformLocation(shaderProgram, "model");
     projLoc = glGetUniformLocation(shaderProgram, "projection");
+    color = glGetUniformLocation(shaderProgram, "spriteColor");
+
+    
     //Camera Loc
 
     //viewPositionLoc = glGetUniformLocation(shaderProgram, "cameraPos");
@@ -109,11 +120,13 @@ void Sprite::Render(Camera* camera_)
     //GL othertographic
     //gl model view
 
+    //Update model?
 
-    //TODO: ask if it is a good idea to use SDL_RenderCopy for 2d sprites with this engine because i would say mabye but the window
-    //access issue and is a problem
+
+    //TODO: try and fix the fact that the image is not showing up, though alot of other work has been completed
     glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(GetTransform()));
     glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(camera_->GetOrthographic()));
+    glUniform3f(color, 1.0f, 0.0f, 1.0f);
 
     glActiveTexture(GL_TEXTURE0);
     //TODO: add in parsing for the sprite sheet

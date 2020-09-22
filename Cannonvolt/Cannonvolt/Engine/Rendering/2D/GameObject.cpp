@@ -1,15 +1,17 @@
 #include "GameObject.h"
 
 //TODO: add in load sprite/sheet into gameobject instead of model
-GameObject::GameObject(Sprite* sprite, glm::vec2 position_)
+GameObject::GameObject(Sprite* sprite_, glm::vec2 position_)
 {
+	sprite = sprite_;
 	position = glm::vec3(position_,0);
 	rotation = 0;
 	scale = glm::vec3(1.0f,1.0,0);
 	tag = "";
 	hit = false;
-	
+
 	if (sprite) {
+		//sprite = sprite_;
 		box = sprite->GetBoundingBox();
 		box.transform = sprite->GetTransform();
 	}
@@ -82,8 +84,9 @@ void GameObject::SetScale(glm::vec2 scale_)
 	if (sprite) {
 		sprite->SetScale(scale_);
 		box.transform = sprite->GetTransform();
-		box.minVert *= scale.x > 1.0f ? scale : (scale / 2.0f);
-		box.maxVert *= scale.x > 1.0f ? scale : (scale / 2.0f);
+		//TODO: Fix scaleing
+		//box.width *= scale.x > 1.0f ? scale : (scale / 2.0f);
+		//box.height *= scale.y > 1.0f ? scale : (scale / 2.0f);
 	}
 }
 
