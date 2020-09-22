@@ -1,6 +1,6 @@
 #include "Character.h"
 
-Character::Character() : GameObject(new Sprite(ShaderHandler::GetInstance()->GetShader("basicShader"),"Apple_Body")) {
+Character::Character() : GameObject(new Sprite(ShaderHandler::GetInstance()->GetShader("basicShader"),"Mario2")) {
 
 }
 

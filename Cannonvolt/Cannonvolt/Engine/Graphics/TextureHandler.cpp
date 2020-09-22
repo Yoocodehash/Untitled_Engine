@@ -110,9 +110,9 @@ const void TextureHandler::InitTexture(const std::string fileName_)
 		float width, height;
 		v >> width >> height;
 
-
+		//TODO: Add support for other image types
 		TextureHandler::GetInstance()->CreateTexture(fileName_,
-		"./Resources/Textures/" + fileName_ + ".jpg", width, height);
+		"./Resources/Textures/" + fileName_ + ".png", width, height);
 	}
 }
 

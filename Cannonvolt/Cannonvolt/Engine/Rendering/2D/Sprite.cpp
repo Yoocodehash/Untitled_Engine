@@ -28,11 +28,14 @@ glm::mat4 Sprite::GetTransform()
 
     model = glm::translate(model, position);
 
+    
     model = glm::translate(model, glm::vec3(0.5f * scale.x, 0.5f * scale.y, 0.0f)); // move origin of rotation to center of quad
-    model = glm::rotate(model, glm::radians(rotation), glm::vec3(0.0f, 0.0f, 1.0f)); // rotate
+    model = glm::rotate(model, glm::radians(rotation + 180), glm::vec3(0.0f, 0.0f, 1.0f)); // rotate
     model = glm::translate(model, glm::vec3(-0.5f * scale.x, -0.5f * scale.y, 0.0f)); // move origin back
 
     model = glm::scale(model, scale);
+
+    
 
     return model;
 }
@@ -71,7 +74,22 @@ void Sprite::initRenderData()
         1.0f, 1.0f, 1.0f, 1.0f,
         1.0f, 0.0f, 1.0f, 0.0f
     };
+      /*0.0f, 1.0f, 0.0f, 1.0f,
+        1.0f, 0.0f, 1.0f, 0.0f,
+        0.0f, 0.0f, 0.0f, 0.0f,
 
+        0.0f, 1.0f, 0.0f, 1.0f,
+        1.0f, 1.0f, 1.0f, 1.0f,
+        1.0f, 0.0f, 1.0f, 0.0f
+        
+        
+                1.0f, 0.0f, 0.0f, 1.0f,
+        0.0f, 1.0f, 1.0f, 0.0f,
+        1.0f, 1.0f, 0.0f, 0.0f,
+
+        0.0f, 1.0f, 0.0f, 1.0f,
+        1.0f, 1.0f, 1.0f, 1.0f,
+        1.0f, 0.0f, 1.0f, 0.0f*/
     glGenVertexArrays(1, &this->quadVAO);
     glGenBuffers(1, &VBO);
 
@@ -124,9 +142,13 @@ void Sprite::Render(Camera* camera_)
 
 
     //TODO: try and fix the fact that the image is not showing up, though alot of other work has been completed
+    glUniform1f(TextureHandler::GetInstance()->GetTexture(textureTag), 0);
+    //glScalef(1, -1, 1);
     glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(GetTransform()));
     glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(camera_->GetOrthographic()));
-    glUniform3f(color, 1.0f, 0.0f, 1.0f);
+
+    //Color filter
+    glUniform3f(color, 1.0f, 1.0f, 1.0f);
 
     glActiveTexture(GL_TEXTURE0);
     //TODO: add in parsing for the sprite sheet
