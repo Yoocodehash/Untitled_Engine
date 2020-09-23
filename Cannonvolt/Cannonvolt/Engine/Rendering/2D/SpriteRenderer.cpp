@@ -15,8 +15,18 @@ void SpriteRenderer::InitRenderData()
 {
     // configure VAO/VBO
     unsigned int VBO;
+
     float vertices[] = {
         // pos      // tex
+         0.0f, 1.0f, 0.0f, 0.0f,
+         1.0f, 0.0f, 1.0f, 1.0f,
+         0.0f, 0.0f, 0.0f, 1.0f,
+         0.0f, 1.0f, 0.0f, 0.0f,
+         1.0f, 1.0f, 1.0f, 0.0f,
+         1.0f, 0.0f, 1.0f, 1.0f
+         
+    };
+    /*  
         0.0f, 1.0f, 0.0f, 1.0f,
         1.0f, 0.0f, 1.0f, 0.0f,
         0.0f, 0.0f, 0.0f, 0.0f,
@@ -24,14 +34,6 @@ void SpriteRenderer::InitRenderData()
         0.0f, 1.0f, 0.0f, 1.0f,
         1.0f, 1.0f, 1.0f, 1.0f,
         1.0f, 0.0f, 1.0f, 0.0f
-    };
-    /*0.0f, 1.0f, 0.0f, 1.0f,
-      1.0f, 0.0f, 1.0f, 0.0f,
-      0.0f, 0.0f, 0.0f, 0.0f,
-
-      0.0f, 1.0f, 0.0f, 1.0f,
-      1.0f, 1.0f, 1.0f, 1.0f,
-      1.0f, 0.0f, 1.0f, 0.0f
 
 
               1.0f, 0.0f, 0.0f, 1.0f,

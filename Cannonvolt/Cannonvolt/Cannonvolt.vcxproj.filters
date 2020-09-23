@@ -90,9 +90,6 @@
     <ClCompile Include="Engine\Core\Debug.cpp">
       <Filter>Source Files\Engine\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Core\Scene.cpp">
-      <Filter>Source Files\Engine\Core</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\Core\Timer.cpp">
       <Filter>Source Files\Engine\Core</Filter>
     </ClCompile>
