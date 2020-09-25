@@ -4,9 +4,9 @@
 class Character : public GameObject {
 public:
 	Character();
-	~Character();
+	virtual ~Character();
 
-	bool OnCreate();
-	void Update(const float deltaTime_) override;
+	virtual bool OnCreate();
+	virtual void Update(const float deltaTime_) override;
 
 };

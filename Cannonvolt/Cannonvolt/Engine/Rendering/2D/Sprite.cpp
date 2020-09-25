@@ -54,6 +54,8 @@ glm::mat4 Sprite::GetTransform(glm::vec3 position_, float rotation_, glm::vec3 s
 
     model = glm::translate(model, position_);
 
+    //TODO: this might not work well/may cause serious issues, however it might be a performance improvement due to skiping on 
+    //usless steps
     if (rotation_ != 0) {
         model = glm::translate(model, glm::vec3(0.5f * scale_.x, 0.5f * scale_.y, 0.0f)); // move origin of rotation to center of quad
         model = glm::rotate(model, glm::radians(rotation_ + 180), glm::vec3(0.0f, 0.0f, 1.0f)); // rotate
@@ -66,7 +68,6 @@ glm::mat4 Sprite::GetTransform(glm::vec3 position_, float rotation_, glm::vec3 s
 
 void Sprite::Render(Camera* camera_)
 {
-    //UpdateInstance(0, )
     spriteRender->Render(camera_, spriteInstances);
     //Could this system have worked? mabye look into blend for thesprite sheet parse
    // glEnable(GL_TEXTURE_2D);
@@ -78,20 +79,5 @@ void Sprite::Render(Camera* camera_)
     //gl model view
 
     //TODO: try and fix the fact that the image is not showing up, though alot of other work has been completed
-    /*glUniform1f(TextureHandler::GetInstance()->GetTexture(textureTag), 0);
-    //glScalef(1, -1, 1);
-    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(GetTransform()));
-    glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(camera_->GetOrthographic()));
-
-    //Color filter
-    glUniform3f(color, 1.0f, 1.0f, 1.0f);
-
-    glActiveTexture(GL_TEXTURE0);
-    //TODO: add in parsing for the sprite sheet
-    glBindTexture(GL_TEXTURE_2D, TextureHandler::GetInstance()->GetTexture(textureTag));
-
-    glBindVertexArray(this->quadVAO);
-    glDrawArrays(GL_TRIANGLES, 0, 6);
-    glBindVertexArray(0);*/
 
 }

@@ -5,6 +5,10 @@
 #include <string>
 #include <fstream>
 
+/*
+Used to debug the game 
+*/
+
 enum class MessageType : unsigned short{
 	TYPE_NONE,
 	TYPE_FATAL_ERROR,

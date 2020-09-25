@@ -16,6 +16,7 @@ void SpriteRenderer::InitRenderData()
     // configure VAO/VBO
     unsigned int VBO;
 
+    //The reason the y texture vertacies are reversed is becasue images consider the top 0 but opengl considers the bottom to be 0
     float vertices[] = {
         // pos      // tex
          0.0f, 1.0f, 0.0f, 0.0f,
@@ -26,23 +27,7 @@ void SpriteRenderer::InitRenderData()
          1.0f, 0.0f, 1.0f, 1.0f
          
     };
-    /*  
-        0.0f, 1.0f, 0.0f, 1.0f,
-        1.0f, 0.0f, 1.0f, 0.0f,
-        0.0f, 0.0f, 0.0f, 0.0f,
 
-        0.0f, 1.0f, 0.0f, 1.0f,
-        1.0f, 1.0f, 1.0f, 1.0f,
-        1.0f, 0.0f, 1.0f, 0.0f
-
-
-              1.0f, 0.0f, 0.0f, 1.0f,
-      0.0f, 1.0f, 1.0f, 0.0f,
-      1.0f, 1.0f, 0.0f, 0.0f,
-
-      0.0f, 1.0f, 0.0f, 1.0f,
-      1.0f, 1.0f, 1.0f, 1.0f,
-      1.0f, 0.0f, 1.0f, 0.0f*/
     glGenVertexArrays(1, &this->quadVAO);
     glGenBuffers(1, &VBO);
 

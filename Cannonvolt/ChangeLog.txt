@@ -1,0 +1,17 @@
+List of changes
+
+
+Bounding box	
+	min and max vert has been changed to width and height for now(may be changed back for 
+	better AABB)
+
+GameObject 
+
+Sprite
+	created to replace the model and mesh class's in order to do 2D work
+
+
+
+
+stoped video at 25:20 in case i left it
+

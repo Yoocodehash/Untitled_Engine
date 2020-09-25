@@ -3,6 +3,11 @@
 
 #include <SDL.h>
 
+/*
+Allows the game to have a sense of time 
+*/
+
+
 class Timer
 {
 public:
