@@ -11,7 +11,7 @@ ShaderHandler::~ShaderHandler()
 {
 	OnDestroy();
 }
-ShaderHandler * ShaderHandler::GetInstance()
+ShaderHandler* ShaderHandler::GetInstance()
 {
 	if (shaderInstance.get() == nullptr) {
 		shaderInstance.reset(new ShaderHandler);
@@ -19,7 +19,7 @@ ShaderHandler * ShaderHandler::GetInstance()
 	return shaderInstance.get();
 }
 
-void ShaderHandler::CreateProgram(const std::string & shaderName_, const std::string & vertexShadeFilePath_, const std::string & fragmentShaderFilePath_)
+void ShaderHandler::CreateProgram(const std::string& shaderName_, const std::string& vertexShadeFilePath_, const std::string& fragmentShaderFilePath_)
 {
 	std::string vertexShaderCode = ReadShader(vertexShadeFilePath_);
 	std::string fragmentShaderCode = ReadShader(fragmentShaderFilePath_);
@@ -27,7 +27,7 @@ void ShaderHandler::CreateProgram(const std::string & shaderName_, const std::st
 	if (vertexShaderCode == "" || fragmentShaderCode == "") {
 		return;
 	}
-	
+
 	GLuint vertexShader = CreateShader(GL_VERTEX_SHADER, vertexShaderCode, shaderName_);
 	GLuint fragmentShader = CreateShader(GL_FRAGMENT_SHADER, fragmentShaderCode, shaderName_);
 
@@ -62,12 +62,12 @@ void ShaderHandler::CreateProgram(const std::string & shaderName_, const std::st
 	programs[shaderName_] = program;
 }
 
-GLuint ShaderHandler::GetShader(const std::string & shaderName_)
+GLuint ShaderHandler::GetShader(const std::string& shaderName_)
 {
 	if (programs.find(shaderName_) != programs.end()) {
 		return programs[shaderName_];
 	}
-	
+
 	return 0;
 }
 
@@ -81,7 +81,7 @@ void ShaderHandler::OnDestroy()
 	}
 }
 
-std::string ShaderHandler::ReadShader(const std::string & filePath_)
+std::string ShaderHandler::ReadShader(const std::string& filePath_)
 {
 	std::string shaderCode;
 	std::ifstream file;
@@ -92,14 +92,14 @@ std::string ShaderHandler::ReadShader(const std::string & filePath_)
 		tmpStream << file.rdbuf();
 		shaderCode = tmpStream.str();
 	}
-	catch(std::ifstream::failure error_){
+	catch (std::ifstream::failure error_) {
 		Debug::Error("Could not read file" + filePath_, "ShaderHandler.cpp", __LINE__);
 		return "";
 	}
 	return shaderCode;
 }
 
-GLuint ShaderHandler::CreateShader(GLenum shaderType_, const std::string & source_, const std::string & shaderName_)
+GLuint ShaderHandler::CreateShader(GLenum shaderType_, const std::string& source_, const std::string& shaderName_)
 {
 	GLint compileResult = 0;
 	GLuint shader = glCreateShader(shaderType_);
@@ -119,6 +119,7 @@ GLuint ShaderHandler::CreateShader(GLenum shaderType_, const std::string & sourc
 	}
 	return shader;
 }
+
 
 
 

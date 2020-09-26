@@ -31,7 +31,7 @@ Ray CollisionDetection::ScreenPosToWorldRay(glm::vec2 mouseCords_, glm::vec2 scr
 }
 
 
-
+/*
 bool CollisionDetection::RayObbIntersection(Ray * ray_, BoundingBox * box_)
 {
 	float tMin = CoreEngine::GetInstance()->GetCamera()->GetClippingPlanes().x;
@@ -44,7 +44,7 @@ bool CollisionDetection::RayObbIntersection(Ray * ray_, BoundingBox * box_)
 	glm::vec3 delta = obbPosition_World - ray_->origin;
 
 	//X axis
-	glm::vec3 xAxis(box_->transform[0].x, box_->transform[0].y, box_->transform[0].z);
+	glm::vec2 xAxis(box_->transform[0].x, box_->transform[0].y);
 	float e = glm::dot(xAxis, delta);
 	float f = glm::dot(ray_->direction, xAxis);
 
@@ -112,44 +112,10 @@ bool CollisionDetection::RayObbIntersection(Ray * ray_, BoundingBox * box_)
 		}
 	}
 
-	//Z axis
-	glm::vec3 zAxis(box_->transform[2].x, box_->transform[2].y, box_->transform[2].z);
-	e = glm::dot(zAxis, delta);
-	f = glm::dot(ray_->direction, zAxis);
-
-	if (fabs(f) > 0.001f) {
-		float t1 = (e + box_->minVert.z) / f;
-		float t2 = (e + box_->maxVert.z) / f;
-
-		if (t1 > t2) {
-			float w = t1;
-			t1 = t2;
-			t2 = w;
-		}
-
-		if (t2 < tMax) {
-			tMax = t2;
-		}
-
-		if (t1 > tMin) {
-			tMin = t1;
-		}
-
-		if (tMax < tMin) {
-			return false;
-		}
-	}
-
-	else {
-		if (-e + box_->minVert.z > 0.0f || -e + box_->maxVert.z < 0.0f) {
-			return false;
-		}
-	}
-
 	ray_->intersectionDist = tMin;
 	return true;
 }
-
+*/
 
 
 CollisionDetection::~CollisionDetection()

@@ -173,30 +173,22 @@ bool Camera::FrustumCull(std::vector<glm::vec4> frustum_, BoundingBox* box_)
 
 		glm::vec3 axisVert;
 
-		//ok so i need to get game object world position in order for this to work
+		//TODO: need to improve this seriously
 
 		// x-axis
 		if (frustum_[i].x < 0.0f) {
-			axisVert.x = box_->minVert.x + box_->transform[3].x;
+			axisVert.x = box_->transform[3].x;
 		}
 		else {
-			axisVert.x = box_->maxVert.x + box_->transform[3].x;
+			axisVert.x = box_->width + box_->transform[3].x;
 		}
 
 		// y-axis
 		if (frustum_[i].y < 0.0f) {
-			axisVert.y = box_->minVert.y + box_->transform[3].y;
+			axisVert.y = box_->transform[3].y;
 		}
 		else {
-			axisVert.y = box_->maxVert.y + box_->transform[3].y;
-		}
-
-		// z-axis
-		if (frustum_[i].z < 0.0f) {
-			axisVert.z = box_->minVert.z + box_->transform[3].z;
-		}
-		else {
-			axisVert.z = box_->maxVert.z + box_->transform[3].z;
+			axisVert.y = box_->height + box_->transform[3].y;
 		}
 
 		//Is point outside of frustum

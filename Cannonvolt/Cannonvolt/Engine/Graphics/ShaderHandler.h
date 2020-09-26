@@ -30,7 +30,7 @@ private:
 	friend std::default_delete<ShaderHandler>;
 
 	std::string ReadShader(const std::string& filePath_);
-	GLuint CreateShader(GLenum shaderType_, const std::string& source_,const std::string& shaderName_);
+	GLuint CreateShader(GLenum shaderType_, const std::string& source_, const std::string& shaderName_);
 
 	static std::map<std::string, GLuint> programs;
 };

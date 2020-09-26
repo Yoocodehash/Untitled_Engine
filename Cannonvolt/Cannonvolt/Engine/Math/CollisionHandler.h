@@ -2,7 +2,7 @@
 #define COLLISIONHANDLER_H
 
 #include "Ray.h"
-#include "../Rendering/3D/GameObject.h"
+#include "../Rendering/2D/GameObject.h"
 //#include "CollisionDetection.h"
 
 class CollisionHandler

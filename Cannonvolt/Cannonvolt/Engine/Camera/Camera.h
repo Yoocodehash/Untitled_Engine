@@ -7,8 +7,10 @@
 #include <vector>
 #include "../FX/LightSource.h"
 
+
 /*
-Used to determine what the player see's
+Used to determine what and how information is displayed to the screen and 
+uses frustum culling to prevent redundent rendering
 */
 
 struct BoundingBox;

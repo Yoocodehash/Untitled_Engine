@@ -4,7 +4,7 @@
 #include <memory>
 #include <map>
 #include <vector>
-#include "3D/GameObject.h"
+#include "2D/GameObject.h"
 #include "../Math/CollisionHandler.h"
 
 class SceneGraph
@@ -16,7 +16,7 @@ public:
 	SceneGraph& operator =(SceneGraph&&) = delete;
 
 	static SceneGraph* GetInstance();
-	void AddModel(Model* model_);
+	void AddSprite(Sprite* sprite_);
 	void AddGameObject(GameObject* go_, std::string tag_ = "GameObject");
 	
 	GameObject* GetGameObject(std::string tag_);
@@ -32,7 +32,7 @@ private:
 	static std::unique_ptr<SceneGraph> sceneGraphInstance;
 	friend std::default_delete<SceneGraph>;
 
-	static std::map<GLuint, std::vector<Model*>> sceneModels;
+	static std::map<GLuint, std::vector<Sprite*>> sceneSprites;
 	static std::map<std::string, GameObject*> sceneGameObjects;
 
 };

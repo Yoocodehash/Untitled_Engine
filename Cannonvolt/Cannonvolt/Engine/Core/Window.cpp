@@ -45,7 +45,7 @@ bool Window::OnCreate(std::string name_, int width_, int height_)
 		return false;
 	}
 	
-	glEnable(GL_DEPTH_TEST);
+	//glEnable(GL_DEPTH_TEST);
 
 	glViewport(0, 0, width, height);
 

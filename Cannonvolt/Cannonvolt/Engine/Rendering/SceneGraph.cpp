@@ -2,7 +2,7 @@
 
 std::unique_ptr<SceneGraph> SceneGraph::sceneGraphInstance = nullptr;
 
-std::map<GLuint, std::vector<Model*>> SceneGraph::sceneModels = std::map<GLuint, std::vector<Model*>>();
+std::map<GLuint, std::vector<Sprite*>> SceneGraph::sceneSprites = std::map<GLuint, std::vector<Sprite*>>();
 std::map<std::string, GameObject*> SceneGraph::sceneGameObjects = std::map<std::string, GameObject*>();
 
 SceneGraph * SceneGraph::GetInstance()
@@ -13,16 +13,16 @@ SceneGraph * SceneGraph::GetInstance()
 	return sceneGraphInstance.get();
 }
 
-void SceneGraph::AddModel(Model * model_)
+void SceneGraph::AddSprite(Sprite * sprite_)
 {
-	if (sceneModels.find(model_->GetShaderProgram()) == sceneModels.end()) {
-		std::vector<Model*> tmp = std::vector<Model*>();
+	if (sceneSprites.find(sprite_->GetShaderProgram()) == sceneSprites.end()) {
+		std::vector<Sprite*> tmp = std::vector<Sprite*>();
 		tmp.reserve(10);
-		tmp.push_back(model_);
-		sceneModels.insert(std::pair < GLuint, std::vector<Model*>>(model_->GetShaderProgram(), tmp));
+		tmp.push_back(sprite_);
+		sceneSprites.insert(std::pair < GLuint, std::vector<Sprite*>>(sprite_->GetShaderProgram(), tmp));
 	}
 	else {
-		sceneModels[model_->GetShaderProgram()].push_back(model_);
+		sceneSprites[sprite_->GetShaderProgram()].push_back(sprite_);
 	}
 }
 
@@ -75,20 +75,21 @@ void SceneGraph::Render(Camera * camera_)
 	//TODO: Frustum culling
 	//World space culling (should this be the type i use? only version i found any explantation about)
 
-	std::vector<glm::vec4> frustum;
-	frustum.reserve(6);
+	//std::vector<glm::vec4> frustum;
+	//frustum.reserve(6);
 
-	frustum = camera_->GetFrustumPlanes();
+	//frustum = camera_->GetFrustumPlanes();
 
-	for (auto entry : sceneModels) {
+	for (auto entry : sceneSprites) {
 
 		glUseProgram(entry.first);
+		//entry.second.
 
 		for (auto m : entry.second) {
 			
-			if (!camera_->FrustumCull(frustum, &m->GetBoundingBox())) {
+			//if (!camera_->FrustumCull(frustum, &m->GetBoundingBox())) {
 				m->Render(camera_);
-			}
+			//}
 		}
 	}
 }
@@ -103,8 +104,8 @@ void SceneGraph::OnDestroy()
 		sceneGameObjects.clear();
 	}
 
-	if (sceneModels.size() > 0) {
-		for (auto entry : sceneModels) {
+	if (sceneSprites.size() > 0) {
+		for (auto entry : sceneSprites) {
 			if (entry.second.size() > 0) {
 				for (auto m : entry.second) {
 					delete m;
@@ -113,7 +114,7 @@ void SceneGraph::OnDestroy()
 				entry.second.clear();
 			}
 		}
-		sceneModels.clear();
+		sceneSprites.clear();
 	}
 }
 

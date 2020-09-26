@@ -7,6 +7,11 @@
 #include <string>
 #include <iostream>
 
+/*
+Creates the window for display
+*/
+
+
 class Window
 {
 public:

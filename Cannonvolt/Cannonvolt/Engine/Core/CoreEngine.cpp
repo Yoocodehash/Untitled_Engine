@@ -25,12 +25,10 @@ bool CoreEngine::OnCreate(std::string name_, int width_, int height_)
 		return isRunning = false;
 	}
 
+	
 	SDL_WarpMouseInWindow(window->GetWindow(), window->GetWidth() / 2, window->GetHeight() / 2);
 
 	MouseEventListener::RegisterEngineObject(this);
-
-	ShaderHandler::GetInstance()->CreateProgram("colourShader", 
-		"Engine/Shaders/ColourVertexShader.glsl","Engine/Shaders/ColourFragmentShader.glsl");
 
 	ShaderHandler::GetInstance()->CreateProgram("basicShader",
 		"Engine/Shaders/VertexShader.glsl",
@@ -86,8 +84,6 @@ CoreEngine * CoreEngine::GetInstance()
 
 void CoreEngine::OnDestroy()
 {
-	ShaderHandler::GetInstance()->OnDestroy();
-	TextureHandler::GetInstance()->OnDestroy();
 	SceneGraph::GetInstance()->OnDestroy();
 
 	delete gameInterface;
@@ -112,7 +108,7 @@ void CoreEngine::Update(const float deltaTime_)
 
 void CoreEngine::Render()
 {
-	glClearColor(0, 0, 1.0f, 1.0f);
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	if (gameInterface) {
 		gameInterface->Render();
