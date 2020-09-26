@@ -1,10 +1,11 @@
 #ifndef KEYEVENTLISTENER_H
 #define KEYEVENTLISTINER_H
 
-#include "../Events/EventListener.h"
+#include <SDL.h>
+#include <glm/glm.hpp>
 
-class KeyEventListener : {
-
+class KeyEventListener {
+public:
 	static void Update(SDL_Event e_);
 
 };
