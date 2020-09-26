@@ -138,6 +138,12 @@
     <ClCompile Include="Engine\Rendering\2D\SpriteRenderer.cpp">
       <Filter>Source Files\Engine\Rendering\2D</Filter>
     </ClCompile>
+    <ClCompile Include="Game\Character.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Events\KeyEventListener.cpp">
+      <Filter>Source Files\Engine\Events</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Core\CoreEngine.h">
@@ -208,6 +214,12 @@
     </ClInclude>
     <ClInclude Include="Engine\Rendering\2D\SpriteRenderer.h">
       <Filter>Header Files\Engine\Rendering\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Character.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Events\KeyEventListener.h">
+      <Filter>Header Files\Engine\Events</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -153,6 +153,7 @@
     <ClCompile Include="Engine\Core\Timer.cpp" />
     <ClCompile Include="Engine\Core\Window.cpp" />
     <ClCompile Include="Engine\Events\EventListener.cpp" />
+    <ClCompile Include="Engine\Events\KeyEventListener.cpp" />
     <ClCompile Include="Engine\Events\MouseEventListener.cpp" />
     <ClCompile Include="Engine\FX\LightSource.cpp" />
     <ClCompile Include="Engine\Graphics\ShaderHandler.cpp" />
@@ -177,6 +178,7 @@
     <ClInclude Include="Engine\Core\Timer.h" />
     <ClInclude Include="Engine\Core\Window.h" />
     <ClInclude Include="Engine\Events\EventListener.h" />
+    <ClInclude Include="Engine\Events\KeyEventListener.h" />
     <ClInclude Include="Engine\Events\MouseEventListener.h" />
     <ClInclude Include="Engine\FX\LightSource.h" />
     <ClInclude Include="Engine\Graphics\ShaderHandler.h" />
