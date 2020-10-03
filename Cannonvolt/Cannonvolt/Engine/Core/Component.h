@@ -1,10 +1,5 @@
 #pragma once
 
-/*
-Base class for all types of coponents
-*/
-
-
 class GameObject;
 
 class Component {

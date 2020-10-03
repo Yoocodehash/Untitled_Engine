@@ -8,6 +8,7 @@ class KeyEventListener {
 public:
 	static void Update(SDL_Event e_);
 
+	static bool right;
 };
 
 #endif

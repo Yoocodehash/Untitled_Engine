@@ -26,7 +26,7 @@ public:
     GLuint GetShaderProgram() const;
 
 
-    void Render(Camera* camera_);
+    void Draw(Camera* camera_);
 
 
 private:

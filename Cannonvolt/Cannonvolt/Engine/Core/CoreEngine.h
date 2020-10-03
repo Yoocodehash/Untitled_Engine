@@ -17,6 +17,7 @@
 #include "../Camera/Camera.h"
 
 #include "../Events/EventListener.h"
+#include "Component.h"
 
 
 class CoreEngine
@@ -57,7 +58,7 @@ private:
 
 	void OnDestroy();
 	void Update(const float deltaTime_);
-	void Render();
+	void Draw();
 
 	Window* window;
 	bool isRunning;

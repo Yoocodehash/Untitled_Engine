@@ -1,6 +1,9 @@
 List of changes
 
 
+version-3
+
+
 Bounding box	
 	min and max vert has been changed to width and height for now(may be changed back for 
 	better AABB)
@@ -12,6 +15,21 @@ Sprite
 
 
 
+version-4
 
-stoped video at 25:20 in case i left it
+//New
+Added AI class that is a component.
+Added Incomplete Behavior tree.
+
+//Change
+Changed vertex and frag shaders to core 450 versions to attempt to improve performance
+
+//Fix 
+Changed all Render functions to Draw functions to use proper nameing conventions in 2D display
+
+
+
+
+
+
 

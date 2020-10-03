@@ -58,7 +58,7 @@ glm::mat4 Sprite::GetTransform(glm::vec3 position_, float rotation_, glm::vec3 s
     //usless steps
     if (rotation_ != 0) {
         model = glm::translate(model, glm::vec3(0.5f * scale_.x, 0.5f * scale_.y, 0.0f)); // move origin of rotation to center of quad
-        model = glm::rotate(model, glm::radians(rotation_ + 180), glm::vec3(0.0f, 0.0f, 1.0f)); // rotate
+        model = glm::rotate(model, glm::radians(rotation_), glm::vec3(0.0f, 0.0f, 1.0f)); // rotate
         model = glm::translate(model, glm::vec3(-0.5f * scale_.x, -0.5f * scale_.y, 0.0f)); // move origin back
     }
     model = glm::scale(model, scale_);
@@ -66,9 +66,9 @@ glm::mat4 Sprite::GetTransform(glm::vec3 position_, float rotation_, glm::vec3 s
     return model;
 }
 
-void Sprite::Render(Camera* camera_)
+void Sprite::Draw(Camera* camera_)
 {
-    spriteRender->Render(camera_, spriteInstances);
+    spriteRender->Draw(camera_, spriteInstances);
     //Could this system have worked? mabye look into blend for thesprite sheet parse
    // glEnable(GL_TEXTURE_2D);
    // glEnable(GL_BLEND);
