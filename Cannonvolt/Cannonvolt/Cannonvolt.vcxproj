@@ -90,13 +90,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Github\Untitled_Engine\Cannonvolt\Linking\OpenGL\include;D:\Github\Untitled_Engine\Cannonvolt\Linking\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\Documents\GitHub\Untitled_Engine\Cannonvolt\Linking\OpenGL\include;C:\Users\User\Documents\GitHub\Untitled_Engine\Cannonvolt\Linking\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL2.lib;SDL2_image.lib;SDL2main.lib;SDL2test.lib;glew32.lib;glew32s.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Github\Untitled_Engine\Cannonvolt\Linking\OpenGL\lib;D:\Github\Untitled_Engine\Cannonvolt\Linking\SDL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\User\Documents\GitHub\Untitled_Engine\Cannonvolt\Linking\OpenGL\lib;C:\Users\User\Documents\GitHub\Untitled_Engine\Cannonvolt\Linking\SDL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
