@@ -3,12 +3,17 @@
 
 #include <SDL.h>
 #include <glm/glm.hpp>
+#include <iostream>
+#include <map>
+
 
 class KeyEventListener {
 public:
-	static void Update(SDL_Event e_);
+	static void Press(const SDL_Keycode e_);
+	static void Release(const SDL_Keycode e_);
 
-	static bool right;
+	static std::map<SDL_Keycode, bool> keyMap;
+
 };
 
 #endif

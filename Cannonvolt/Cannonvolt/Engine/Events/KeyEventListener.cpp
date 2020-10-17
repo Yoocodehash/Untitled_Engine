@@ -1,37 +1,31 @@
 #include "KeyEventListener.h"
-#include <iostream>
 
-bool KeyEventListener::right = false;
+std::map<SDL_Keycode, bool> KeyEventListener::keyMap = std::map<SDL_Keycode, bool>();
 
-void KeyEventListener::Update(SDL_Event e_){
+void KeyEventListener::Press(const SDL_Keycode e_){
 
 	std::printf("pressed button ->");
+	
+	keyMap[e_] = true;
+	std::cout << e_ << std::endl;
 
-	switch (e_.key.keysym.sym) {
-		
-	case SDLK_w:
-	case SDLK_UP:
-		std::cout << " w / UP pressed" << std::endl;
-		//temp
-		break;
-	case SDLK_d:
-	case SDLK_RIGHT:
-		std::cout << " d / RIGHT pressed" << std::endl;
-		//temp
-		break;
-	case SDLK_s:
-	case SDLK_DOWN:
-		std::cout << " s / DOWN pressed" << std::endl;
-		//temp
-		break;
-	case SDLK_a:
-	case SDLK_LEFT:
-		std::cout << " a / LEFT pressed" << std::endl;
-		//temp
-		break;
-	default:
-		break;
-		
+	if (keyMap[SDLK_a] == true) {
+		std::cout << "Pressing!" << std::endl;		
 	}
+
 }
+
+void KeyEventListener::Release(SDL_Keycode e_){
+
+	std::printf("released button ->");
+
+	keyMap[e_] = false;
+	std::cout << e_ << std::endl;
+
+	if (keyMap[SDLK_a] == false) {
+		std::cout << "Released!" << std::endl;
+	}
+
+}
+
 
