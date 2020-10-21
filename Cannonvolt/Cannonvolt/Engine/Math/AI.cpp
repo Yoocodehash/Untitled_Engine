@@ -1,6 +1,7 @@
 #include "AI.h"
+#include "../Rendering/2D/GameObject.h"
 
-AI::AI() : Component() {
+AI::AI() {
 	
 }
 

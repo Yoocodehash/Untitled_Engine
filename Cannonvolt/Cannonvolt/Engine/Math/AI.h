@@ -1,7 +1,9 @@
 #pragma once
-#include "..\Core\Component.h"
 #include <glm/glm.hpp>
 #include <vector>
+
+class GameObject;
+
 
 enum class STATUS {
 	INVALID,
@@ -130,16 +132,18 @@ class Selector : public Composite {
 	}
 };
 
-class AI : public Component {
+class AI {
 public:
 	AI();
 	~AI();
 
-	bool OnCreate(GameObject* parent_) override;
-	void Update(const float deltaTime_) override;
+	bool OnCreate(GameObject* parent_);
+	void Update(const float deltaTime_);
 
 	void AddBehavior(Behavior* node_);
 
 private:
 	Behavior* root;
+
+	GameObject* parent;
 };

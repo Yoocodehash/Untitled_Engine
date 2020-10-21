@@ -233,9 +233,6 @@
     <ClInclude Include="Engine\Math\AI.h">
       <Filter>Header Files\Engine\Math</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Core\Component.h">
-      <Filter>Header Files\Engine\Core</Filter>
-    </ClInclude>
     <ClInclude Include="Game\Platform.h">
       <Filter>Header Files\Game</Filter>
     </ClInclude>

@@ -6,6 +6,7 @@ Character::Character() : GameObject(new Sprite(ShaderHandler::GetInstance()->Get
 
 Character::~Character()
 {
+
 }
 
 bool Character::OnCreate()

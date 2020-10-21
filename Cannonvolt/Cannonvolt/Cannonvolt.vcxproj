@@ -175,7 +175,6 @@
   <ItemGroup>
     <ClInclude Include="AITest.h" />
     <ClInclude Include="Engine\Camera\Camera.h" />
-    <ClInclude Include="Engine\Core\Component.h" />
     <ClInclude Include="Engine\Core\CoreEngine.h" />
     <ClInclude Include="Engine\Core\Debug.h" />
     <ClInclude Include="Engine\Core\GameInterface.h" />
