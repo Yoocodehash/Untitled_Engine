@@ -1,11 +1,18 @@
 #ifndef KEYEVENTLISTENER_H
 #define KEYEVENTLISTINER_H
 
-#include "../Events/EventListener.h"
+#include <SDL.h>
+#include <glm/glm.hpp>
+#include <iostream>
+#include <map>
 
-class KeyEventListener : {
+class KeyEventListener {
+public:
+	static void Press(const SDL_Keycode e_);
+	static void Release(const SDL_Keycode e_);
 
-	static void Update(SDL_Event e_);
+private:
+	static std::map<SDL_Keycode, bool> keyMap;
 
 };
 

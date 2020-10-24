@@ -1,11 +1,30 @@
 #include "KeyEventListener.h"
-#include <iostream>
 
+std::map<SDL_Keycode, bool> KeyEventListener::keyMap = std::map<SDL_Keycode, bool>();
 
+void KeyEventListener::Press(const SDL_Keycode e) {
 
-void KeyEventListener::Update(SDL_Event e_){
+    std::printf("pressed button ->");
 
-	std::cout << "pressed ", e_ << std::endl;
+    keyMap[e] = true;
+    std::cout << e << std::endl;
+
+    if (keyMap[SDLK_a] == true) {
+        std::cout << "Pressing!" << std::endl;
+    }
+
+}
+
+void KeyEventListener::Release(SDL_Keycode e) {
+
+    std::printf("released button ->");
+
+    keyMap[e] = false;
+    std::cout << e << std::endl;
+
+    if (keyMap[SDLK_a] == false) {
+        std::cout << "Released!" << std::endl;
+    }
 
 }
 
