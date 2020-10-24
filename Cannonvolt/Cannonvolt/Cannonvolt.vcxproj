@@ -172,6 +172,7 @@
     <ClCompile Include="Game\SceneManager.cpp" />
     <ClCompile Include="Game\TestScene.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Physics.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AITest.h" />
@@ -201,6 +202,7 @@
     <ClInclude Include="Game\Platform.h" />
     <ClInclude Include="Game\SceneManager.h" />
     <ClInclude Include="Game\TestScene.h" />
+    <ClInclude Include="Physics.h" />
     <ClInclude Include="Modular_Base.h" />
   </ItemGroup>
   <ItemGroup>
