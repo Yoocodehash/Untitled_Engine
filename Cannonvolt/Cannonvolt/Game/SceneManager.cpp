@@ -37,9 +37,9 @@ void SceneManager::Update(const float deltaTime_)
 	currentScene->Update(deltaTime_);
 }
 
-void SceneManager::Render()
+void SceneManager::Draw()
 {
-	currentScene->Render();
+	currentScene->Draw();
 }
 
 void SceneManager::BuildScene()

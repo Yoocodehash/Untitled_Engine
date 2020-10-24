@@ -12,7 +12,7 @@ public:
 	SpriteRenderer(std::string textureTag_, GLuint shaderProgram_);
 	~SpriteRenderer();
 
-	void Render(Camera* camera_, std::vector<glm::mat4> instances);
+	void Draw(Camera* camera_, std::vector<glm::mat4> instances);
 
 private:
 	void InitRenderData();

@@ -21,7 +21,7 @@ public:
 	
 	GameObject* GetGameObject(std::string tag_);
 	void Update(const float deltaTime_);
-	void Render(Camera* camera_);
+	void Draw(Camera* camera_);
 	void OnDestroy();
 
 

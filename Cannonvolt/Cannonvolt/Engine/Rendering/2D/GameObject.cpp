@@ -22,10 +22,10 @@ GameObject::~GameObject()
 	
 }
 
-void GameObject::Render(Camera* camera_)
+void GameObject::Draw(Camera* camera_)
 {
 	if (sprite) {
-		sprite->Render(camera_);
+		sprite->Draw(camera_);
 	}
 }
 

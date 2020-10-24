@@ -12,9 +12,6 @@ void EventListener::Update()
 		if (sdlEvent.type == SDL_QUIT) {
 			CoreEngine::GetInstance()->Exit();
 		}
-		else if (sdlEvent.type == SDL_KEYDOWN) {
-			KeyEventListener::Update(sdlEvent.type)
-		}
 				
 		switch (sdlEvent.type) {
 		case SDL_MOUSEBUTTONDOWN:
@@ -23,6 +20,13 @@ void EventListener::Update()
 		case SDL_MOUSEWHEEL:
 			MouseEventListener::Update(sdlEvent);
 			break;
+		case SDL_KEYDOWN:
+			KeyEventListener::Press(sdlEvent.key.keysym.sym);
+			break;
+		case SDL_KEYUP:
+			KeyEventListener::Release(sdlEvent.key.keysym.sym);
+			break;
+
 		default:
 			break;
 		}
