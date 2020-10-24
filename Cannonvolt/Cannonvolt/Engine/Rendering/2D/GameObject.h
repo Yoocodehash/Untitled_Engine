@@ -29,6 +29,8 @@ public:
 	void SetTag(std::string tag_);
 	void SetHit(bool hit_, int buttonType_);
 
+	void Translate(glm::vec2 trans_); // Move object by the parameter
+
 private:
 	Sprite* sprite;
 	int spriteInstance;

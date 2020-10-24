@@ -1,6 +1,5 @@
 #include "GameObject.h"
 
-//TODO: add in load sprite/sheet into gameobject instead of model
 GameObject::GameObject(Sprite* sprite_, glm::vec2 position_)
 {
 	sprite = sprite_;
@@ -97,4 +96,9 @@ void GameObject::SetHit(bool hit_, int buttonType_)
 	if (hit) {
 		std::cout << tag << " was hit" << std::endl;
 	}
+}
+
+void GameObject::Translate(glm::vec2 trans_)
+{
+	position += trans_;
 }
