@@ -20,7 +20,7 @@ bool TestScene::OnCreate()
 
 	character.OnCreate();
 	character.SetPosition(glm::vec2(200.0f, 200.0f));
-	character.SetScale(glm::vec2(100.0f, 100.0f));
+	character.SetScale(glm::vec2(0.10f, 0.10f));
 	
 	return true;
 }
