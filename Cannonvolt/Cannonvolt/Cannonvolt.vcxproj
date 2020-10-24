@@ -202,6 +202,7 @@
     <ClInclude Include="Game\Platform.h" />
     <ClInclude Include="Game\SceneManager.h" />
     <ClInclude Include="Game\TestScene.h" />
+    <ClInclude Include="Modular_Base.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Engine\Shaders\ColourFragmentShader.glsl" />
