@@ -144,6 +144,9 @@
     <ClCompile Include="Engine\Events\KeyEventListener.cpp">
       <Filter>Source Files\Engine\Events</Filter>
     </ClCompile>
+    <ClCompile Include="Physics.cpp">
+      <Filter>Source Files\Engine\Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Core\CoreEngine.h">
@@ -220,6 +223,9 @@
     </ClInclude>
     <ClInclude Include="Engine\Events\KeyEventListener.h">
       <Filter>Header Files\Engine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics.h">
+      <Filter>Header Files\Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

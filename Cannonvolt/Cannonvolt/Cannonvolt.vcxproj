@@ -168,6 +168,7 @@
     <ClCompile Include="Game\SceneManager.cpp" />
     <ClCompile Include="Game\TestScene.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Physics.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Camera\Camera.h" />
@@ -194,6 +195,7 @@
     <ClInclude Include="Game\Character.h" />
     <ClInclude Include="Game\SceneManager.h" />
     <ClInclude Include="Game\TestScene.h" />
+    <ClInclude Include="Physics.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Engine\Shaders\ColourFragmentShader.glsl" />
