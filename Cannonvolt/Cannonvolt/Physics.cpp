@@ -1,3 +1,4 @@
+/*
 position += velocity * deltaTime + 0.5f * acceleration * pow(deltaTime, 2)
 
 public void UpdatePhysics()
@@ -208,3 +209,4 @@ public void CharacterUpdate()
 
     UpdatePrevInputs();
 }
+*/
