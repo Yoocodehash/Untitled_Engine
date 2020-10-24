@@ -5,7 +5,7 @@ int main(int argc, char* argv[]) {
 	//Set game interface here 
 	CoreEngine::GetInstance()->SetGameInterface(new SceneManager);
 
-	if (!CoreEngine::GetInstance()->OnCreate("Game258 Engine", 800, 600)) {
+	if (!CoreEngine::GetInstance()->OnCreate("Game211 Midstone", 800, 600)) {
 		return 0;
 	}
 

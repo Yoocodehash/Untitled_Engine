@@ -1,19 +1,18 @@
 #include "GameObject.h"
 
-//TODO: add in load sprite/sheet into gameobject instead of model
 GameObject::GameObject(Sprite* sprite_, glm::vec2 position_)
 {
 	sprite = sprite_;
-	position = glm::vec3(position_,0);
+	position = position_;
 	rotation = 0;
-	scale = glm::vec3(1.0f,1.0,0);
+	scale = glm::vec2(1.0f,1.0);
 	tag = "";
 	hit = false;
 
 	if (sprite) {
 		spriteInstance = sprite->CreateInstance(position, rotation, scale);
 		box = sprite->GetBoundingBox();
-		box.transform = sprite->GetTransform(spriteInstance);
+		box.pos = position;
 	}
 }
 
@@ -29,7 +28,7 @@ void GameObject::Draw(Camera* camera_)
 	}
 }
 
-glm::vec3 GameObject::GetPosition() const
+glm::vec2 GameObject::GetPosition() const
 {
 	return position;
 }
@@ -39,7 +38,7 @@ float GameObject::GetRotation() const
 	return rotation;
 }
 
-glm::vec3 GameObject::GetScale() const
+glm::vec2 GameObject::GetScale() const
 {
 	return scale;
 }
@@ -62,10 +61,10 @@ bool GameObject::GetHit() const
 //TODO: do this after the question
 void GameObject::SetPosition(glm::vec2 position_)
 {
-	position = glm::vec3(position_,0.0f);
+	position = position_;
 	if (sprite) {
 		sprite->UpdateInstance(spriteInstance, position,rotation,scale);
-		box.transform = sprite->GetTransform(spriteInstance);
+		box.pos = position_;
 	}
 }
 
@@ -74,19 +73,15 @@ void GameObject::SetRotation(float rotation_)
 	rotation = rotation_;
 	if (sprite) {
 		sprite->UpdateInstance(spriteInstance, position, rotation, scale);
-		box.transform = sprite->GetTransform(spriteInstance);
 	}
 }
 
 void GameObject::SetScale(glm::vec2 scale_)
 {
-	scale = glm::vec3(scale_,0.0f);
+	scale = scale_;
 	if (sprite) {
 		sprite->UpdateInstance(spriteInstance, position, rotation, scale);
-		box.transform = sprite->GetTransform(spriteInstance);
-		//TODO: Fix scaleing
-		//box.width *= scale.x > 1.0f ? scale : (scale / 2.0f);
-		//box.height *= scale.y > 1.0f ? scale : (scale / 2.0f);
+		box.dimentions = scale_ * sprite->GetDimentions();
 	}
 }
 
@@ -101,4 +96,9 @@ void GameObject::SetHit(bool hit_, int buttonType_)
 	if (hit) {
 		std::cout << tag << " was hit" << std::endl;
 	}
+}
+
+void GameObject::Translate(glm::vec2 trans_)
+{
+	position += trans_;
 }

@@ -17,7 +17,7 @@
 #include "../Camera/Camera.h"
 
 #include "../Events/EventListener.h"
-#include "Component.h"
+
 
 
 class CoreEngine

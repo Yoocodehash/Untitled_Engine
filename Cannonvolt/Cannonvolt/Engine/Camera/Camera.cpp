@@ -2,9 +2,8 @@
 #include "../Core/CoreEngine.h"
 
 
-Camera::Camera() : position(glm::vec3()) , lightSources(std::vector<LightSource*>())
+Camera::Camera() : position(glm::vec3()), lightSources(std::vector<LightSource*>())
 {
-	
 	fieldOfView = 45.0f;
 	forward = glm::vec3(0, 0, 1.0f);
 	up = glm::vec3(0, 1.0f, 0);
@@ -43,6 +42,11 @@ void Camera::SetRotation(float yaw_, float pitch_)
 	UpdateCameraVectors();
 }
 
+void Camera::Translate(const glm::vec3 movement_)
+{
+	SetPosition(position + movement_);
+}
+
 glm::mat4 Camera::GetView() const
 {
 	return glm::lookAt(position, position + forward, up);
@@ -63,7 +67,7 @@ std::vector<LightSource*> Camera::GetLightSources() const
 	return lightSources;
 }
 
-void Camera::AddLightSource(LightSource * source)
+void Camera::AddLightSource(LightSource* source)
 {
 	lightSources.push_back(source);
 }
@@ -80,8 +84,9 @@ glm::vec2 Camera::GetClippingPlanes() const
 
 void Camera::ProcessMouseMovement(glm::vec2 offset_)
 {
+	/*
 	offset_ *= 0.05f;
-	
+
 	yaw += offset_.x;
 	pitch += offset_.y;
 
@@ -99,14 +104,14 @@ void Camera::ProcessMouseMovement(glm::vec2 offset_)
 	if (yaw > 360.0f) {
 		yaw -= 360.0f;
 	}
-
+	*/
 	UpdateCameraVectors();
 }
 
 void Camera::ProcessMouseScroll(int y_)
 {
 	if (y_ < 0 || y_ > 0) {
-		position += static_cast<float>(y_)* (forward * 2.0f);
+		position += static_cast<float>(y_) * (forward * 2.0f);
 	}
 	UpdateCameraVectors();
 }
@@ -173,22 +178,22 @@ bool Camera::FrustumCull(std::vector<glm::vec4> frustum_, BoundingBox* box_)
 
 		glm::vec3 axisVert;
 
-		//TODO: need to improve this seriously
+		//ok so i need to get game object world position in order for this to work
 
 		// x-axis
 		if (frustum_[i].x < 0.0f) {
-			axisVert.x = box_->transform[3].x;
+			axisVert.x = box_->pos.x;
 		}
 		else {
-			axisVert.x = box_->width + box_->transform[3].x;
+			axisVert.x = box_->dimentions.x + box_->pos.x;
 		}
 
 		// y-axis
 		if (frustum_[i].y < 0.0f) {
-			axisVert.y = box_->transform[3].y;
+			axisVert.y = box_->pos.y;
 		}
 		else {
-			axisVert.y = box_->height + box_->transform[3].y;
+			axisVert.y = box_->dimentions.y + box_->pos.y;
 		}
 
 		//Is point outside of frustum
