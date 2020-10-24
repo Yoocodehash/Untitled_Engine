@@ -40,6 +40,9 @@ public:
 
 	bool FrustumCull(std::vector<glm::vec4> frustum_, BoundingBox* box_);
 
+	void Translate(glm::vec3 movement_);
+
+
 private: 
 	void UpdateCameraVectors();
 	

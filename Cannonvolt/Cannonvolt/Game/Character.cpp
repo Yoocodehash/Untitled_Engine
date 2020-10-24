@@ -1,11 +1,12 @@
 #include "Character.h"
 
-Character::Character() : GameObject(new Sprite(ShaderHandler::GetInstance()->GetShader("basicShader"),"Mario2")) {
+Character::Character() : GameObject(new Sprite(ShaderHandler::GetInstance()->GetShader("basicShader"),"Mario")) {
 
 }
 
 Character::~Character()
 {
+
 }
 
 bool Character::OnCreate()

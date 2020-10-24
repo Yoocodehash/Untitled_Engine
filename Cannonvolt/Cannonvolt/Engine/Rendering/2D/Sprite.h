@@ -17,32 +17,32 @@ public:
     Sprite(GLuint shaderProgram_, const std::string& textureName_);
     ~Sprite();
 
-    const int CreateInstance(glm::vec3 position_, float rotation_, glm::vec3 scale_);
-    void UpdateInstance(int index_, glm::vec3 position_, float rotation_, glm::vec3 scale_);
+    const int CreateInstance(glm::vec2 position_, float rotation_, glm::vec2 scale_);
+    void UpdateInstance(int index_, glm::vec2 position_, float rotation_, glm::vec2 scale_);
 
     //Getters
     BoundingBox GetBoundingBox();
     glm::mat4 GetTransform(int index_) const;
     GLuint GetShaderProgram() const;
 
+    glm::vec2 GetDimentions() const;
 
-    void Render(Camera* camera_);
+    void Draw(Camera* camera_);
 
 
 private:
+
     SpriteRenderer* spriteRender;
     BoundingBox box;
     GLuint shaderProgram;
  
-
-
+    glm::vec2 spriteSize;
     //GLuint textureLoc;
-    //GLuint viewPositionLoc, lightPosLoc, lightAmbientLoc, lightDiffuseLoc, lightColourLoc;
 
     int depth; //Depth (0 is first rendered)
 
-    glm::mat4 GetTransform(glm::vec3 position_, float rotation_,
-        glm::vec3 scale_) const;
+    glm::mat4 GetTransform(glm::vec2 position_, float rotation_,
+        glm::vec2 scale_) const;
 
     std::vector<glm::mat4> spriteInstances;
 };

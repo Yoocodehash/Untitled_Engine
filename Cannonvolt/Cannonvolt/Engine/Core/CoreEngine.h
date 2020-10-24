@@ -19,6 +19,7 @@
 #include "../Events/EventListener.h"
 
 
+
 class CoreEngine
 {
 public:
@@ -57,7 +58,7 @@ private:
 
 	void OnDestroy();
 	void Update(const float deltaTime_);
-	void Render();
+	void Draw();
 
 	Window* window;
 	bool isRunning;

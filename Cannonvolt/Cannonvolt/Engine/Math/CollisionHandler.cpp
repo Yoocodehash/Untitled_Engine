@@ -38,7 +38,7 @@ void CollisionHandler::OnCreate(float worldSize_)
 
 void CollisionHandler::AddObject(GameObject * go_)
 {
-	
+
 }
 
 //Issue is that mouse Ray origin is said to be in the 10ns of thousands

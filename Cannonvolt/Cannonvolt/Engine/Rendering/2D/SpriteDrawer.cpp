@@ -22,6 +22,7 @@ void SpriteRenderer::InitRenderData()
          0.0f, 1.0f, 0.0f, 0.0f,
          1.0f, 0.0f, 1.0f, 1.0f,
          0.0f, 0.0f, 0.0f, 1.0f,
+
          0.0f, 1.0f, 0.0f, 0.0f,
          1.0f, 1.0f, 1.0f, 0.0f,
          1.0f, 0.0f, 1.0f, 1.0f
@@ -50,7 +51,7 @@ void SpriteRenderer::InitRenderData()
     //viewPositionLoc = glGetUniformLocation(shaderProgram, "cameraPos");
 }
 
-void SpriteRenderer::Render(Camera* camera_, std::vector<glm::mat4> instances)
+void SpriteRenderer::Draw(Camera* camera_, std::vector<glm::mat4> instances)
 {
     
     glUniform1f(TextureHandler::GetInstance()->GetTexture(textureTag), 0);
