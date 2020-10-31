@@ -205,7 +205,6 @@
     <ClInclude Include="Game\SceneManager.h" />
     <ClInclude Include="Game\TestScene.h" />
     <ClInclude Include="InputControl.h" />
-    <ClInclude Include="Physics.h" />
     <ClInclude Include="Modular_Base.h" />
   </ItemGroup>
   <ItemGroup>
