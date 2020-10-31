@@ -1,6 +1,7 @@
 #include "TestScene.h"
 
 
+
 TestScene::TestScene() : Scene() {
 
 }
@@ -22,11 +23,14 @@ bool TestScene::OnCreate()
 	character.SetPosition(glm::vec2(200.0f, 200.0f));
 	character.SetScale(glm::vec2(0.10f, 0.10f));
 	
+	controller.Init(&character);
+
 	return true;
 }
 
 void TestScene::Update(const float deltaTime_)
 {
+	controller.Update(deltaTime_);
 }
 
 void TestScene::Draw()

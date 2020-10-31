@@ -9,10 +9,6 @@ void KeyEventListener::Press(const SDL_Keycode e_){
 	keyMap[e_] = true;
 	std::cout << e_ << std::endl;
 
-	if (keyMap[SDLK_a] == true) {
-		std::cout << "Pressing!" << std::endl;		
-	}
-
 }
 
 void KeyEventListener::Release(SDL_Keycode e_){
@@ -21,10 +17,6 @@ void KeyEventListener::Release(SDL_Keycode e_){
 
 	keyMap[e_] = false;
 	std::cout << e_ << std::endl;
-
-	if (keyMap[SDLK_a] == false) {
-		std::cout << "Released!" << std::endl;
-	}
 
 }
 
