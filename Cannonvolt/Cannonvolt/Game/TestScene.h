@@ -1,6 +1,7 @@
 #pragma once
 #include "../Engine/Core/Scene.h"
 #include "../Engine/Core/CoreEngine.h"
+#include "../InputControl.h"
 #include "Character.h"
 #include "Platform.h"
 //#include "../Engine/Rendering/SceneGraph.h"
@@ -15,7 +16,7 @@ public:
 	virtual void Draw() override;
 
 	Character character;
-
+	InputControl controller;
 	Platform grass;
 };
 

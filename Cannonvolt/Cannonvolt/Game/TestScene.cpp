@@ -1,6 +1,7 @@
 #include "TestScene.h"
 
 
+
 TestScene::TestScene() : Scene() {
 
 }
@@ -26,16 +27,18 @@ bool TestScene::OnCreate()
 	grass.SetPosition(glm::vec2(490.0f, 210.0f));
 	grass.SetScale(glm::vec2(0.1f));
 	
+  controller.Init(&character);
+  
 	if (character.GetBoundingBox().Intersects(&grass.GetBoundingBox())) {
-	
-	}
+  }
+
 
 	return true;
 }
 
 void TestScene::Update(const float deltaTime_)
 {
-
+	controller.Update(deltaTime_);
 }
 
 void TestScene::Draw()

@@ -153,6 +153,9 @@
     <ClCompile Include="AITest.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
+    <ClCompile Include="InputControl.cpp">
+      <Filter>Source Files\Engine\Events</Filter>
+    </ClCompile>
     <ClCompile Include="Engine\Math\Physics.cpp">
       <Filter>Source Files\Engine\Math</Filter>
     </ClCompile>
@@ -241,6 +244,9 @@
     </ClInclude>
     <ClInclude Include="Modular_Base.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputControl.h">
+      <Filter>Header Files\Engine\Events</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Math\Physics.h">
       <Filter>Header Files\Engine\Math</Filter>
