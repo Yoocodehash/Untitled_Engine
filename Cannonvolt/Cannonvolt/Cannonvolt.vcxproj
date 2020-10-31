@@ -164,6 +164,7 @@
     <ClCompile Include="Engine\Math\CollisionDetection.cpp" />
     <ClCompile Include="Engine\Math\CollisionHandler.cpp" />
     <ClCompile Include="Engine\Math\Physics.cpp" />
+    <ClCompile Include="Engine\Modules\Platformer.cpp" />
     <ClCompile Include="Engine\Rendering\2D\GameObject.cpp" />
     <ClCompile Include="Engine\Rendering\2D\Sprite.cpp" />
     <ClCompile Include="Engine\Rendering\2D\SpriteDrawer.cpp" />
@@ -196,6 +197,8 @@
     <ClInclude Include="Engine\Math\CollisionHandler.h" />
     <ClInclude Include="Engine\Math\Physics.h" />
     <ClInclude Include="Engine\Math\Ray.h" />
+    <ClInclude Include="Engine\Modules\Modular_Base.h" />
+    <ClInclude Include="Engine\Modules\Platformer.h" />
     <ClInclude Include="Engine\Rendering\2D\GameObject.h" />
     <ClInclude Include="Engine\Rendering\2D\Sprite.h" />
     <ClInclude Include="Engine\Rendering\2D\SpriteDrawer.h" />
@@ -205,7 +208,6 @@
     <ClInclude Include="Game\SceneManager.h" />
     <ClInclude Include="Game\TestScene.h" />
     <ClInclude Include="InputControl.h" />
-    <ClInclude Include="Modular_Base.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Engine\Shaders\ColourFragmentShader.glsl" />

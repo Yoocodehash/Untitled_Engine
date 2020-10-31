@@ -76,6 +76,12 @@
     <Filter Include="Header Files\Engine\Shaders">
       <UniqueIdentifier>{a4b5a433-0fd0-4090-b547-1c0200b0e73f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Engine\Modules">
+      <UniqueIdentifier>{78ea06c8-53db-4615-a4c4-2cd24d674fd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Modules">
+      <UniqueIdentifier>{3045b07f-1b78-4057-93d2-909d1158d484}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -158,6 +164,9 @@
     </ClCompile>
     <ClCompile Include="Engine\Math\Physics.cpp">
       <Filter>Source Files\Engine\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Modules\Platformer.cpp">
+      <Filter>Source Files\Engine\Modules</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -242,9 +251,6 @@
     <ClInclude Include="AITest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Modular_Base.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="InputControl.h">
       <Filter>Header Files\Engine\Events</Filter>
     </ClInclude>
@@ -253,6 +259,12 @@
     </ClInclude>
     <ClInclude Include="Engine\Rendering\2D\SpriteDrawer.h">
       <Filter>Header Files\Engine\Rendering\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Modules\Modular_Base.h">
+      <Filter>Header Files\Engine\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Modules\Platformer.h">
+      <Filter>Header Files\Engine\Modules</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
