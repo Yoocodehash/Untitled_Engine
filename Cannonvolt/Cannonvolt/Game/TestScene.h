@@ -3,6 +3,7 @@
 #include "../Engine/Core/CoreEngine.h"
 #include "../InputControl.h"
 #include "Character.h"
+#include "Platform.h"
 //#include "../Engine/Rendering/SceneGraph.h"
 class TestScene : public Scene 
 {
@@ -16,5 +17,6 @@ public:
 
 	Character character;
 	InputControl controller;
+	Platform grass;
 };
 

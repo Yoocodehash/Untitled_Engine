@@ -18,6 +18,7 @@ public:
 	void OnCreate(float worldSize_);
 	void AddObject(GameObject* go_);
 	void MouseUpdate(glm::vec2 mousePosition_, int buttonType_);
+	void AABB();
 
 private:
 	CollisionHandler();
@@ -28,6 +29,8 @@ private:
 
 	
 	static std::vector<GameObject*> prevCollisions;
+
+	std::vector<GameObject*> gameObjects;
 
 };
 #endif // !COLLISIONHANDLER_H

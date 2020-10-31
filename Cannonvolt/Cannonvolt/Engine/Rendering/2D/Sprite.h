@@ -6,7 +6,7 @@ class or struct to hold the information of the sprite, think of it like a model 
 sprite shoould be able to know the texture (sprite sheet) it is working off of and 
 */
 
-#include "SpriteRenderer.h"
+#include "SpriteDrawer.h"
 
 
 //Sprite sheet 
@@ -29,10 +29,12 @@ public:
 
     void Draw(Camera* camera_);
 
+    void SetFlip(bool flip_);
+
 
 private:
 
-    SpriteRenderer* spriteRender;
+    SpriteDrawer* spriteRender;
     BoundingBox box;
     GLuint shaderProgram;
  
@@ -45,5 +47,7 @@ private:
         glm::vec2 scale_) const;
 
     std::vector<glm::mat4> spriteInstances;
+
+    bool flip;
 };
 

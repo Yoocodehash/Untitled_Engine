@@ -21,6 +21,7 @@ GameObject::~GameObject()
 	
 }
 
+
 void GameObject::Draw(Camera* camera_)
 {
 	if (sprite) {
@@ -100,5 +101,10 @@ void GameObject::SetHit(bool hit_, int buttonType_)
 
 void GameObject::Translate(glm::vec2 trans_)
 {
-	position += trans_;
+	SetPosition(position + trans_);
+}
+
+//TODO: finish the response peter
+void GameObject::CollisionResponse()
+{
 }

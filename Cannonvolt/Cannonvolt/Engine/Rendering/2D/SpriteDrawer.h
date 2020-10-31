@@ -7,10 +7,15 @@
 #include "../../Graphics/TextureHandler.h"
 #include "../../Math/BoundingBox.h"
 
-class SpriteRenderer {
+struct Vertex {
+	glm::vec2 position;
+	glm::vec2 texCoords;
+};
+
+class SpriteDrawer {
 public:
-	SpriteRenderer(std::string textureTag_, GLuint shaderProgram_);
-	~SpriteRenderer();
+	SpriteDrawer(std::string textureTag_, GLuint shaderProgram_);
+	~SpriteDrawer();
 
 	void Draw(Camera* camera_, std::vector<glm::mat4> instances);
 
@@ -19,8 +24,11 @@ private:
 	std::string textureTag; //Used in render to denote what texture should loaded in here
 	GLuint shaderProgram;
 
-	unsigned int quadVAO;
+	GLuint VAO, VBO;
+	
 	GLuint modelLoc, projLoc, color;
 
-;
+	std::vector<Vertex> boxCoords;
+	std::vector<Vertex> boxCoordsRev;
+
 };

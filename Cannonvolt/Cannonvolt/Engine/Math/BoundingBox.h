@@ -24,6 +24,18 @@ public:
 	//Is not in collision because Screen partition could not access it
 	inline bool Intersects(BoundingBox* box_) {
 
+		glm::vec2 minCorner = pos;
+		glm::vec2 maxCorner = GetTransformedPoint(pos, dimentions);
+
+		glm::vec2 otherMinCorner = box_->pos;
+		glm::vec2 otherMaxCorner = GetTransformedPoint(box_->pos, box_->dimentions);
+
+		//Both maxs must be larger the the others mins
+
+		if (minCorner.x <= otherMaxCorner.x && maxCorner.x >= otherMinCorner.x &&
+			minCorner.y <= otherMaxCorner.y && maxCorner.y >= otherMinCorner.y) {
+			return true;
+		}
 
 		return false;
 	}

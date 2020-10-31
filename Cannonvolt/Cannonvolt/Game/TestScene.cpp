@@ -22,8 +22,16 @@ bool TestScene::OnCreate()
 	character.OnCreate();
 	character.SetPosition(glm::vec2(200.0f, 200.0f));
 	character.SetScale(glm::vec2(0.10f, 0.10f));
+
+	grass.OnCreate();
+	grass.SetPosition(glm::vec2(490.0f, 210.0f));
+	grass.SetScale(glm::vec2(0.1f));
 	
-	controller.Init(&character);
+  controller.Init(&character);
+  
+	if (character.GetBoundingBox().Intersects(&grass.GetBoundingBox())) {
+  }
+
 
 	return true;
 }

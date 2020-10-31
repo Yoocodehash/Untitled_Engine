@@ -11,10 +11,12 @@ Character::~Character()
 
 bool Character::OnCreate()
 {
+	physics.OnCreate(this);
+
 	return true;
 }
 
 void Character::Update(const float deltaTime_)
 {
-	int a = 1;
+	physics.Update(deltaTime_);
 }

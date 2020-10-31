@@ -163,6 +163,7 @@
     <ClCompile Include="Engine\Math\AI.cpp" />
     <ClCompile Include="Engine\Math\CollisionDetection.cpp" />
     <ClCompile Include="Engine\Math\CollisionHandler.cpp" />
+    <ClCompile Include="Engine\Math\Physics.cpp" />
     <ClCompile Include="Engine\Rendering\2D\GameObject.cpp" />
     <ClCompile Include="Engine\Rendering\2D\Sprite.cpp" />
     <ClCompile Include="Engine\Rendering\2D\SpriteDrawer.cpp" />
@@ -173,7 +174,6 @@
     <ClCompile Include="Game\TestScene.cpp" />
     <ClCompile Include="InputControl.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Physics.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AITest.h" />
@@ -194,10 +194,11 @@
     <ClInclude Include="Engine\Math\BoundingBox.h" />
     <ClInclude Include="Engine\Math\CollisionDetection.h" />
     <ClInclude Include="Engine\Math\CollisionHandler.h" />
+    <ClInclude Include="Engine\Math\Physics.h" />
     <ClInclude Include="Engine\Math\Ray.h" />
     <ClInclude Include="Engine\Rendering\2D\GameObject.h" />
     <ClInclude Include="Engine\Rendering\2D\Sprite.h" />
-    <ClInclude Include="Engine\Rendering\2D\SpriteRenderer.h" />
+    <ClInclude Include="Engine\Rendering\2D\SpriteDrawer.h" />
     <ClInclude Include="Engine\Rendering\SceneGraph.h" />
     <ClInclude Include="Game\Character.h" />
     <ClInclude Include="Game\Platform.h" />
