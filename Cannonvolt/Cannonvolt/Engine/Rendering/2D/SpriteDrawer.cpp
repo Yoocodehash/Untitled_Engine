@@ -1,43 +1,64 @@
-#include "SpriteRenderer.h"
+#include "SpriteDrawer.h"
 //#include "../../Core/CoreEngine.h"
 
-SpriteRenderer::SpriteRenderer(std::string textureTag_, GLuint shaderProgram_) {
+SpriteDrawer::SpriteDrawer(std::string textureTag_, GLuint shaderProgram_) {
     textureTag = textureTag_;
     shaderProgram = shaderProgram_;
-    InitRenderData();
 
+    boxCoords.reserve(6);
+    boxCoords.push_back(Vertex());
+    boxCoords.push_back(Vertex());
+    boxCoords.push_back(Vertex());
+    boxCoords.push_back(Vertex());
+    boxCoords.push_back(Vertex());
+    boxCoords.push_back(Vertex());
+
+    boxCoords[0].position = glm::vec2(0.0f, 1.0f);
+    boxCoords[0].texCoords = glm::vec2(0.0f, 0.0f);
+
+    boxCoords[1].position = glm::vec2(1.0f, 0.0f);
+    boxCoords[1].texCoords = glm::vec2(1.0f, 1.0f);
+
+    boxCoords[2].position = glm::vec2(0.0f, 0.0f);
+    boxCoords[2].texCoords = glm::vec2(0.0f, 1.0f);
+
+    boxCoords[3].position = glm::vec2(0.0f, 1.0f);
+    boxCoords[3].texCoords = glm::vec2(0.0f, 0.0f);
+    
+    boxCoords[4].position = glm::vec2(1.0f, 1.0f);
+    boxCoords[4].texCoords = glm::vec2(1.0f, 0.0f);
+
+    boxCoords[5].position = glm::vec2(1.0f, 0.0f);
+    boxCoords[5].texCoords = glm::vec2(1.0f, 1.0f);
+
+
+
+    InitRenderData();
 }
 
-SpriteRenderer::~SpriteRenderer()
+SpriteDrawer::~SpriteDrawer()
 {
 }
-void SpriteRenderer::InitRenderData()
+void SpriteDrawer::InitRenderData()
 {
     // configure VAO/VBO
-    unsigned int VBO;
 
-    //The reason the y texture vertacies are reversed is becasue images consider the top 0 but opengl considers the bottom to be 0
-    float vertices[] = {
-        // pos      // tex
-         0.0f, 1.0f, 0.0f, 0.0f,
-         1.0f, 0.0f, 1.0f, 1.0f,
-         0.0f, 0.0f, 0.0f, 1.0f,
-
-         0.0f, 1.0f, 0.0f, 0.0f,
-         1.0f, 1.0f, 1.0f, 0.0f,
-         1.0f, 0.0f, 1.0f, 1.0f
-         
-    };
-
-    glGenVertexArrays(1, &this->quadVAO);
+    glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
 
+    glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-    glBindVertexArray(this->quadVAO);
+    glBufferData(GL_ARRAY_BUFFER, boxCoords.size() * sizeof(Vertex), &boxCoords[0], GL_STATIC_DRAW);
+
+    //POSITION
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)0);
+
+    //TEXTURE COORDINATES
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, texCoords));
+
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
@@ -51,7 +72,7 @@ void SpriteRenderer::InitRenderData()
     //viewPositionLoc = glGetUniformLocation(shaderProgram, "cameraPos");
 }
 
-void SpriteRenderer::Draw(Camera* camera_, std::vector<glm::mat4> instances)
+void SpriteDrawer::Draw(Camera* camera_, std::vector<glm::mat4> instances)
 {
     
     glUniform1f(TextureHandler::GetInstance()->GetTexture(textureTag), 0);
@@ -68,7 +89,7 @@ void SpriteRenderer::Draw(Camera* camera_, std::vector<glm::mat4> instances)
     //TODO: add in parsing for the sprite sheet
     //glBindTexture(GL_TEXTURE_2D, TextureHandler::GetInstance()->GetTexture(textureTag));
 
-    glBindVertexArray(this->quadVAO);
+    glBindVertexArray(VAO);
     for (int i = 0; i < instances.size(); i++) {
         glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(instances[i]));
         glDrawArrays(GL_TRIANGLES, 0, 6);

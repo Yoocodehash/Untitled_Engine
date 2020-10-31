@@ -21,4 +21,5 @@ private:
 
 	glm::vec2 velocity, acceleration;
 
+
 };

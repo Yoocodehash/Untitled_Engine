@@ -5,7 +5,7 @@ Sprite::Sprite(GLuint shaderProgram_, const std::string& textureName_) : depth(0
     shaderProgram = shaderProgram_;
     //textureTag = textureName_;
     TextureHandler::GetInstance()->InitTexture(textureName_);
-    spriteRender = new SpriteRenderer(textureName_, shaderProgram);
+    spriteRender = new SpriteDrawer(textureName_, shaderProgram);
 
     spriteSize = glm::vec2(TextureHandler::GetInstance()->GetTextureData(textureName_)->spriteWidth,
         TextureHandler::GetInstance()->GetTextureData(textureName_)->spriteHeight);
@@ -79,4 +79,9 @@ void Sprite::Draw(Camera* camera_)
     //GL othertographic
     //gl model view
 
+}
+
+void Sprite::SetFlip(bool flip_)
+{
+    flip = flip_;
 }
