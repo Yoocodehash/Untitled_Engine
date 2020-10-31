@@ -19,11 +19,8 @@ public:
 
 	CollisionDetection() = delete;
 
-	//TODO: use this for one of the graph things
 	static Ray ScreenPosToWorldRay(glm::vec2 mouseCords_, glm::vec2 screenSize_, Camera* camera_);
 	//static bool RayObbIntersection(Ray* ray_, BoundingBox* box_);
-
-	//static bool AABB(const glm::vec2 pos1, const glm::vec2 size1, const glm::vec2 pos2, const glm::vec2 size2);
 
 	~CollisionDetection();
 };

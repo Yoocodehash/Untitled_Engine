@@ -38,7 +38,7 @@ void CollisionHandler::OnCreate(float worldSize_)
 
 void CollisionHandler::AddObject(GameObject * go_)
 {
-
+	gameObjects.push_back(go_);
 }
 
 //Issue is that mouse Ray origin is said to be in the 10ns of thousands
@@ -47,4 +47,20 @@ void CollisionHandler::MouseUpdate(glm::vec2 mousePosition_, int buttonType_)
 	Ray mouseRay = CollisionDetection::ScreenPosToWorldRay(mousePosition_,
 		CoreEngine::GetInstance()->GetWindowSize(),
 		CoreEngine::GetInstance()->GetCamera());
+}
+
+void CollisionHandler::AABB()
+{
+	//Idea is that it will loop over every game object but will not check itself or any checks that have already happened.
+	//this is will save time by preventing re checks, though the question of double checking effects may be something
+	//to consider for more advanced collision idea's.
+
+	for (int i = 0; i < gameObjects.size(); i++) {
+		for (int j = i + 1; j < gameObjects.size(); j++) {
+			if (gameObjects[i]->GetBoundingBox().Intersects(&gameObjects[j]->GetBoundingBox())) {
+				//TODO: collision response here.
+				gameObjects[i]->CollisionResponse();
+			}
+		}
+	}
 }

@@ -141,9 +141,6 @@
     <ClCompile Include="Engine\Events\KeyEventListener.cpp">
       <Filter>Source Files\Engine\Events</Filter>
     </ClCompile>
-    <ClCompile Include="Physics.cpp">
-      <Filter>Source Files\Engine\Core</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\Math\AI.cpp">
       <Filter>Source Files\Engine\Math</Filter>
     </ClCompile>
@@ -155,6 +152,9 @@
     </ClCompile>
     <ClCompile Include="AITest.cpp">
       <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Math\Physics.cpp">
+      <Filter>Source Files\Engine\Math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -224,17 +224,11 @@
     <ClInclude Include="Engine\Graphics\ShaderHandler.h">
       <Filter>Header Files\Engine\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Rendering\2D\SpriteRenderer.h">
-      <Filter>Header Files\Engine\Rendering\2D</Filter>
-    </ClInclude>
     <ClInclude Include="Game\Character.h">
       <Filter>Header Files\Game</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Events\KeyEventListener.h">
       <Filter>Header Files\Engine\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="Physics.h">
-      <Filter>Header Files\Game</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Math\AI.h">
       <Filter>Header Files\Engine\Math</Filter>
@@ -247,6 +241,12 @@
     </ClInclude>
     <ClInclude Include="Modular_Base.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Math\Physics.h">
+      <Filter>Header Files\Engine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Rendering\2D\SpriteDrawer.h">
+      <Filter>Header Files\Engine\Rendering\2D</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

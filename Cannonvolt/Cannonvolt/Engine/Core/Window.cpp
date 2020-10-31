@@ -44,6 +44,9 @@ bool Window::OnCreate(std::string name_, int width_, int height_)
 		
 		return false;
 	}
+
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	
 	//glEnable(GL_DEPTH_TEST);
 

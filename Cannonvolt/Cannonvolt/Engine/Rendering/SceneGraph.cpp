@@ -68,6 +68,7 @@ void SceneGraph::Update(const float deltaTime_)
 	for (auto go : sceneGameObjects) {
 		go.second->Update(deltaTime_);
 	}
+	CollisionHandler::GetInstance()->AABB();
 }
 
 void SceneGraph::Draw(Camera * camera_)
