@@ -5,6 +5,7 @@
 #include "../../Camera/Camera.h"
 #include "Sprite.h"
 #include "../../Math/AI.h"
+#include "../../Math/Physics.h"
 
 
 class GameObject
@@ -15,7 +16,6 @@ public:
 	virtual void Update(const float deltaTime_) = 0;
 	void Draw(Camera* camera_);
 
-	
 	glm::vec2 GetPosition() const;
 	float GetRotation() const;
 	glm::vec2 GetScale() const;
@@ -31,6 +31,11 @@ public:
 
 	void Translate(glm::vec2 trans_); // Move object by the parameter
 
+	void CollisionResponse();
+
+protected:
+	Physics physics;
+
 private:
 	Sprite* sprite;
 	int spriteInstance;
@@ -43,6 +48,8 @@ private:
 	std::string tag;
 
 	bool hit;
+
+
 
 };
 #endif // !GAMEOBJECT_H

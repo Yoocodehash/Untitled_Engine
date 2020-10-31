@@ -79,6 +79,4 @@ void Sprite::Draw(Camera* camera_)
     //GL othertographic
     //gl model view
 
-    //TODO: try and fix the fact that the image is not showing up, though alot of other work has been completed
-
 }
