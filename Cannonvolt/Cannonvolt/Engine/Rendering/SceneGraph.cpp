@@ -1,8 +1,8 @@
 #include "SceneGraph.h"
+#include "../Graphics/ShaderHandler.h"
 
 std::unique_ptr<SceneGraph> SceneGraph::sceneGraphInstance = nullptr;
 
-std::map<GLuint, std::vector<Sprite*>> SceneGraph::sceneSprites = std::map<GLuint, std::vector<Sprite*>>();
 std::map<std::string, GameObject*> SceneGraph::sceneGameObjects = std::map<std::string, GameObject*>();
 
 SceneGraph * SceneGraph::GetInstance()
@@ -11,19 +11,6 @@ SceneGraph * SceneGraph::GetInstance()
 		sceneGraphInstance.reset(new SceneGraph);
 	}
 	return sceneGraphInstance.get();
-}
-
-void SceneGraph::AddSprite(Sprite * sprite_)
-{
-	if (sceneSprites.find(sprite_->GetShaderProgram()) == sceneSprites.end()) {
-		std::vector<Sprite*> tmp = std::vector<Sprite*>();
-		tmp.reserve(10);
-		tmp.push_back(sprite_);
-		sceneSprites.insert(std::pair < GLuint, std::vector<Sprite*>>(sprite_->GetShaderProgram(), tmp));
-	}
-	else {
-		sceneSprites[sprite_->GetShaderProgram()].push_back(sprite_);
-	}
 }
 
 void SceneGraph::AddGameObject(GameObject * go_, std::string tag_)
@@ -40,7 +27,7 @@ void SceneGraph::AddGameObject(GameObject * go_, std::string tag_)
 		int loop = 1;
 		std::string newTag = tag_ + std::to_string(loop);
 		while(!check){
-			if (sceneGameObjects.find(tag_) == sceneGameObjects.end()) {
+			if (sceneGameObjects.find(newTag) == sceneGameObjects.end()) {
 				check = true;
 			}
 			else {
@@ -53,6 +40,26 @@ void SceneGraph::AddGameObject(GameObject * go_, std::string tag_)
 	}
 	CollisionHandler::GetInstance()->AddObject(go_);
 
+}
+
+void SceneGraph::RemoveGameObject(std::string name_)
+{
+	std::map<std::string, GameObject*>::iterator obj = sceneGameObjects.find(name_);
+	int i = 0;
+	for (auto g : sceneGameObjects) {
+		if (g.first == name_) {
+			delete g. second;
+			g.second = nullptr;
+
+			sceneGameObjects.erase(obj);
+
+			CollisionHandler::GetInstance()->RemoveObject(i);
+			return;
+		}
+		i++;
+	}
+
+	Debug::Error("No game object of that name has been found.", "SceneGraph.cpp", __LINE__);
 }
 
 GameObject * SceneGraph::GetGameObject(std::string tag_)
@@ -73,14 +80,13 @@ void SceneGraph::Update(const float deltaTime_)
 
 void SceneGraph::Draw(Camera * camera_)
 {
-	for (auto entry : sceneSprites) {
+	glClearColor(0, 0, 0.0f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		glUseProgram(entry.first);
-		//entry.second.
+	glUseProgram(ShaderHandler::GetInstance()->GetShader("basicShader"));
 
-		for (auto m : entry.second) {
-			m->Draw(camera_);
-		}
+	for (auto entry : sceneGameObjects) {
+		entry.second->Draw(camera_);
 	}
 }
 
@@ -92,19 +98,6 @@ void SceneGraph::OnDestroy()
 			go.second = nullptr;
 		}
 		sceneGameObjects.clear();
-	}
-
-	if (sceneSprites.size() > 0) {
-		for (auto entry : sceneSprites) {
-			if (entry.second.size() > 0) {
-				for (auto m : entry.second) {
-					delete m;
-					m = nullptr;
-				}
-				entry.second.clear();
-			}
-		}
-		sceneSprites.clear();
 	}
 }
 

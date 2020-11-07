@@ -1,6 +1,7 @@
 #include "Character.h"
+#include "../Engine/Graphics/ShaderHandler.h"
 
-Character::Character() : GameObject(new Sprite(ShaderHandler::GetInstance()->GetShader("basicShader"),"Mario")) {
+Character::Character() : GameObject(new Sprite(ShaderHandler::GetInstance()->GetShader("basicShader"),"Mario", this)) {
 
 }
 
@@ -11,12 +12,10 @@ Character::~Character()
 
 bool Character::OnCreate()
 {
-	physics.OnCreate(this);
-
 	return true;
 }
 
 void Character::Update(const float deltaTime_)
 {
-	physics.Update(deltaTime_);
+	GameObject::Update(deltaTime_);
 }

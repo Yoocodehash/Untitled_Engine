@@ -6,48 +6,72 @@ class or struct to hold the information of the sprite, think of it like a model 
 sprite shoould be able to know the texture (sprite sheet) it is working off of and 
 */
 
-#include "SpriteDrawer.h"
+#include <glm/gtc/type_ptr.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include "../../Camera/Camera.h"
+#include "../../Math/BoundingBox.h"
+#include <glew.h>
+
+class GameObject;
 
 
 //Sprite sheet 
 
+struct Vertex {
+    glm::vec2 position;
+    glm::vec2 texCoords;
+};
+
 class Sprite
 {
 public:
-    Sprite(GLuint shaderProgram_, const std::string& textureName_);
+    Sprite(GLuint shaderProgram_, const std::string& textureName_, GameObject * parent_);
     ~Sprite();
-
-    const int CreateInstance(glm::vec2 position_, float rotation_, glm::vec2 scale_);
-    void UpdateInstance(int index_, glm::vec2 position_, float rotation_, glm::vec2 scale_);
 
     //Getters
     BoundingBox GetBoundingBox();
-    glm::mat4 GetTransform(int index_) const;
     GLuint GetShaderProgram() const;
 
     glm::vec2 GetDimentions() const;
+    glm::vec2 GetScale() const;
+
+    void SetScale(glm::vec2 scale_);
 
     void Draw(Camera* camera_);
 
     void SetFlip(bool flip_);
 
 
-private:
 
-    SpriteDrawer* spriteRender;
+
+private:
+    void InitRenderData();
+    GameObject* parent;
+
     BoundingBox box;
     GLuint shaderProgram;
- 
+    std::string textureName;
+    GLuint textureID;
+
+
     glm::vec2 spriteSize;
+    glm::vec2 scale;
+
     //GLuint textureLoc;
 
     int depth; //Depth (0 is first rendered)
 
-    glm::mat4 GetTransform(glm::vec2 position_, float rotation_,
-        glm::vec2 scale_) const;
-
-    std::vector<glm::mat4> spriteInstances;
-
     bool flip;
+
+    GLuint VAO, VBO;
+
+    GLuint modelLoc, projLoc, color;
+
+    glm::vec4 tint;
+
+    static std::vector<Vertex> boxCoords;
+    static std::vector<Vertex> boxCoordsRev;
+
+
 };
 

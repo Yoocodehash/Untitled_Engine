@@ -13,7 +13,7 @@ class GameObject
 public:
 	GameObject(Sprite* sprite, glm::vec2 position_ = glm::vec2());
 	~GameObject();
-	virtual void Update(const float deltaTime_) = 0;
+	virtual void Update(const float deltaTime_);
 	void Draw(Camera* camera_);
 
 	glm::vec2 GetPosition() const;
@@ -22,6 +22,7 @@ public:
 	BoundingBox GetBoundingBox() const;
 	std::string GetTag() const;
 	bool GetHit() const;
+	Sprite* GetSprite() const;
 
 	void SetPosition(glm::vec2 position_);
 	void SetRotation(float rotation_);
@@ -31,14 +32,20 @@ public:
 
 	void Translate(glm::vec2 trans_); // Move object by the parameter
 
-	void CollisionResponse();
+	void CollisionResponse(GameObject* obj);
 
-protected:
-	Physics physics;
+	//Physics Functions
+
+	void ApplyVelocity(glm::vec2 force_);
+
+	bool IsStatic() const;
+
+	void SetStatic(bool static_);
+
+	void Flip(bool invert_);
 
 private:
 	Sprite* sprite;
-	int spriteInstance;
 
 	glm::vec2 position;
 	float rotation;
@@ -49,7 +56,6 @@ private:
 
 	bool hit;
 
-
-
+	Physics physics;
 };
 #endif // !GAMEOBJECT_H
