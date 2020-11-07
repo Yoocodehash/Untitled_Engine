@@ -16,10 +16,17 @@ public:
 
 	void SetVelocity(glm::vec2 vel_);
 
+	void RigidbodyCollision(GameObject* obj);
+
+	void SetStatic(bool static_);
+
+	bool GetStatic() const;
+
 private:
 	GameObject* parent;
 
 	glm::vec2 velocity, acceleration;
 
+	bool isStatic;
 
 };

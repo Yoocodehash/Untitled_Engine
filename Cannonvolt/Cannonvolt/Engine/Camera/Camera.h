@@ -6,6 +6,7 @@
 #include <glm/matrix.hpp>
 #include <vector>
 #include "../FX/LightSource.h"
+#include "../Core/Debug.h"
 
 
 /*
