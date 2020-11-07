@@ -91,13 +91,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\School\Semester 3\Midstone\Untitled_Engine\Cannonvolt\Linking\OpenGL\include;D:\School\Semester 3\Midstone\Untitled_Engine\Cannonvolt\Linking\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\danny\Documents\GitHub\Untitled_Engine\Cannonvolt\Linking\SDL\include;C:\Users\danny\Documents\GitHub\Untitled_Engine\Cannonvolt\Linking\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL2.lib;SDL2_image.lib;SDL2main.lib;SDL2test.lib;glew32.lib;glew32s.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\School\Semester 3\Midstone\Untitled_Engine\Cannonvolt\Linking\SDL\lib;D:\School\Semester 3\Midstone\Untitled_Engine\Cannonvolt\Linking\OpenGL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\danny\Documents\GitHub\Untitled_Engine\Cannonvolt\Linking\SDL\lib;C:\Users\danny\Documents\GitHub\Untitled_Engine\Cannonvolt\Linking\OpenGL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
