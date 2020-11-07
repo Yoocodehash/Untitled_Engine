@@ -10,6 +10,7 @@ public:
 	~InputControl();
 	void Init(GameObject* player_);
 	void Update(float deltaTime_);
+	
 private:
 	GameObject* player;
 
