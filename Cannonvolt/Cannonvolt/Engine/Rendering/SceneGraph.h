@@ -7,6 +7,7 @@
 #include "2D/GameObject.h"
 #include "../Math/CollisionHandler.h"
 
+
 class SceneGraph
 {
 public:
@@ -16,8 +17,8 @@ public:
 	SceneGraph& operator =(SceneGraph&&) = delete;
 
 	static SceneGraph* GetInstance();
-	void AddSprite(Sprite* sprite_);
 	void AddGameObject(GameObject* go_, std::string tag_ = "GameObject");
+	void RemoveGameObject(std::string tag_);
 	
 	GameObject* GetGameObject(std::string tag_);
 	void Update(const float deltaTime_);
@@ -32,7 +33,6 @@ private:
 	static std::unique_ptr<SceneGraph> sceneGraphInstance;
 	friend std::default_delete<SceneGraph>;
 
-	static std::map<GLuint, std::vector<Sprite*>> sceneSprites;
 	static std::map<std::string, GameObject*> sceneGameObjects;
 
 };

@@ -17,6 +17,7 @@ public:
 	void OnDestroy();
 	void OnCreate(float worldSize_);
 	void AddObject(GameObject* go_);
+	void RemoveObject(int location_);
 	void MouseUpdate(glm::vec2 mousePosition_, int buttonType_);
 	void AABB();
 

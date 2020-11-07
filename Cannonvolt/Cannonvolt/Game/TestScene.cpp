@@ -23,9 +23,12 @@ bool TestScene::OnCreate()
 	character.SetPosition(glm::vec2(200.0f, 200.0f));
 	character.SetScale(glm::vec2(0.10f, 0.10f));
 
+	SceneGraph::GetInstance()->AddGameObject(&character);
+
 	grass.OnCreate();
 	grass.SetPosition(glm::vec2(490.0f, 210.0f));
 	grass.SetScale(glm::vec2(0.1f));
+	SceneGraph::GetInstance()->AddGameObject(&grass);
 	
   controller.Init(&character);
   
