@@ -15,8 +15,7 @@ void InputControl::Init(GameObject* player_){
 }
 
 void InputControl::Update(float deltaTime_){
-	if (KeyEventListener::keyMap[SDLK_a] == true){
-		player->SetScale(glm::vec2(-0.1f, 0.1f));
+	if (KeyEventListener::keyMap[SDLK_a]){
 		player->SetPosition(glm::vec2(player->GetPosition() + glm::vec2(-2.0f, 0.0f)));
 	}
 	if (KeyEventListener::keyMap[SDLK_s]) {
@@ -26,8 +25,9 @@ void InputControl::Update(float deltaTime_){
 		player->SetPosition(glm::vec2(player->GetPosition() + glm::vec2(2.0f, 0.0f)));
 	}
 	if (KeyEventListener::keyMap[SDLK_w]) {
-
+		
 	}
-	
+	if (KeyEventListener::keyMap[SDLK_LSHIFT]) {
+	player->SetPosition(glm::vec2(player->GetPosition() + glm::vec2( /* player direction * */20.0f, 0.0f)));
 }
 
