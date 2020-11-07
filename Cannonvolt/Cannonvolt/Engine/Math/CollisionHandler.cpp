@@ -41,6 +41,10 @@ void CollisionHandler::AddObject(GameObject * go_)
 	gameObjects.push_back(go_);
 }
 
+void CollisionHandler::RemoveObject(int location_) {
+	gameObjects.erase(gameObjects.begin() + location_);
+}
+
 //Issue is that mouse Ray origin is said to be in the 10ns of thousands
 void CollisionHandler::MouseUpdate(glm::vec2 mousePosition_, int buttonType_)
 {
@@ -57,9 +61,10 @@ void CollisionHandler::AABB()
 
 	for (int i = 0; i < gameObjects.size(); i++) {
 		for (int j = i + 1; j < gameObjects.size(); j++) {
-			if (gameObjects[i]->GetBoundingBox().Intersects(&gameObjects[j]->GetBoundingBox())) {
-				//TODO: collision response here.
-				gameObjects[i]->CollisionResponse();
+			if (!gameObjects[i]->IsStatic()) {
+				if (gameObjects[i]->GetBoundingBox().Intersects(&gameObjects[j]->GetBoundingBox())) {
+					gameObjects[i]->CollisionResponse(gameObjects[j]);
+				}
 			}
 		}
 	}
