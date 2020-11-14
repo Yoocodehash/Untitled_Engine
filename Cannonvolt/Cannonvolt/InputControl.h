@@ -8,11 +8,11 @@ class InputControl {
 public:
 	InputControl();
 	~InputControl();
-	void Init(GameObject* player_);
+	void Init(Character* player_);
 	void Update(float deltaTime_);
 	
 private:
-	GameObject* player;
+	Character* player;
 
 
 };

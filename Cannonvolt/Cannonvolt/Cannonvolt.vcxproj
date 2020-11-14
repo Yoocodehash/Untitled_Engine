@@ -91,13 +91,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Github\Untitled_Engine\Cannonvolt\Linking\OpenGL\include;D:\Github\Untitled_Engine\Cannonvolt\Linking\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\danny\Documents\GitHub\Untitled_Engine\Cannonvolt\Linking\OpenGL\include;C:\Users\danny\Documents\GitHub\Untitled_Engine\Cannonvolt\Linking\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL2.lib;SDL2_image.lib;SDL2main.lib;SDL2test.lib;glew32.lib;glew32s.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Github\Untitled_Engine\Cannonvolt\Linking\SDL\lib;D:\Github\Untitled_Engine\Cannonvolt\Linking\OpenGL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\danny\Documents\GitHub\Untitled_Engine\Cannonvolt\Linking\SDL\lib;C:\Users\danny\Documents\GitHub\Untitled_Engine\Cannonvolt\Linking\OpenGL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -169,6 +169,7 @@
     <ClCompile Include="Engine\Rendering\2D\Sprite.cpp" />
     <ClCompile Include="Engine\Rendering\SceneGraph.cpp" />
     <ClCompile Include="Game\Character.cpp" />
+    <ClCompile Include="Game\FireBall.cpp" />
     <ClCompile Include="Game\Platform.cpp" />
     <ClCompile Include="Game\SceneManager.cpp" />
     <ClCompile Include="Game\TestScene.cpp" />
@@ -202,6 +203,7 @@
     <ClInclude Include="Engine\Rendering\2D\Sprite.h" />
     <ClInclude Include="Engine\Rendering\SceneGraph.h" />
     <ClInclude Include="Game\Character.h" />
+    <ClInclude Include="Game\FireBall.h" />
     <ClInclude Include="Game\Platform.h" />
     <ClInclude Include="Game\SceneManager.h" />
     <ClInclude Include="Game\TestScene.h" />

@@ -11,7 +11,7 @@ InputControl::~InputControl(){
 	player = nullptr;
 }
 
-void InputControl::Init(GameObject* player_){
+void InputControl::Init(Character* player_){
 	player = player_;
 }
 
@@ -36,7 +36,9 @@ void InputControl::Update(float deltaTime_) {
 	if (KeyEventListener::keyMap[SDLK_LSHIFT]) {
 		player->SetPosition(glm::vec2(player->GetPosition() + glm::vec2( /* player direction * */20.0f, 0.0f)));
 	}
-
+	if (KeyEventListener::keyMap[SDLK_f]) {
+		player->Shot();
+	}
 }
 /*Calls the KeyEventListener, grabs the keyMap and responds to pressing the spacebar [SDLK_SPACE]
 when space is pressed, it will return an output that lets the character move 2.0f on the Y axis*/
