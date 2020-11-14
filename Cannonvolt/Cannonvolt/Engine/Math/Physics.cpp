@@ -42,3 +42,8 @@ bool Physics::GetStatic() const
 {
 	return isStatic;
 }
+
+void Physics::Gravity(const float deltaTime)
+{
+	velocity += glm::vec2(0.0f, -8) * deltaTime;
+}

@@ -22,6 +22,8 @@ public:
 
 	bool GetStatic() const;
 
+	void Gravity(const float deltaTime);
+
 private:
 	GameObject* parent;
 

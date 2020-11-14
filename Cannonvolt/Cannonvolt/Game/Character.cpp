@@ -19,3 +19,15 @@ void Character::Update(const float deltaTime_)
 {
 	GameObject::Update(deltaTime_);
 }
+
+void Character::CollisionResponse(GameObject* obj)
+{
+
+	if ( GetBoundingBox().CollisionDepth(&obj->GetBoundingBox()).y < 0)
+	
+	{
+		obj.tag;
+	}
+
+	GameObject::CollisionResponse(obj);
+}

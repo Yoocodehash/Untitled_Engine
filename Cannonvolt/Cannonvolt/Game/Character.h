@@ -10,5 +10,7 @@ public:
 	virtual bool OnCreate();
 	virtual void Update(const float deltaTime_) override;
 
+	virtual void CollisionResponse(GameObject* obj) override;
+
 };
 #endif // !Character_h
