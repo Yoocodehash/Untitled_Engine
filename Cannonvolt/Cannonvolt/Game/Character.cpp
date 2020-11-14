@@ -12,6 +12,7 @@ Character::~Character()
 
 bool Character::OnCreate()
 {
+	SetTag("Mario");
 	return true;
 }
 

@@ -14,12 +14,6 @@ void EventListener::Update()
 		}
 				
 		switch (sdlEvent.type) {
-		case SDL_MOUSEBUTTONDOWN:
-		case SDL_MOUSEBUTTONUP:
-		case SDL_MOUSEMOTION:
-		case SDL_MOUSEWHEEL:
-			MouseEventListener::Update(sdlEvent);
-			break;
 		case SDL_KEYDOWN:
 			KeyEventListener::Press(sdlEvent.key.keysym.sym);
 			break;

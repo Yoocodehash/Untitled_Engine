@@ -17,6 +17,7 @@ public:
 
 	Character character;
 	InputControl controller;
-	Platform grass;
+
+	std::vector<Platform*> platforms;
 };
 

@@ -5,7 +5,6 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/matrix.hpp>
 #include <vector>
-#include "../FX/LightSource.h"
 #include "../Core/Debug.h"
 
 
@@ -31,9 +30,6 @@ public:
 	glm::vec3 GetPosition() const;
 	glm::vec2 GetClippingPlanes() const;
 
-	std::vector<LightSource*> GetLightSources() const;
-	void AddLightSource(LightSource* source);
-
 	void ProcessMouseMovement(glm::vec2 offset_);
 	void ProcessMouseScroll(int y_);
 
@@ -57,8 +53,6 @@ private:
 	float nearPlane, farPlane;
 
 	glm::vec3 forward, up, right, worldUp;
-
-	std::vector<LightSource*> lightSources;
 
 	void OnDestroy();
 };
