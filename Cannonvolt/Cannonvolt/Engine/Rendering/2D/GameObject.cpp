@@ -109,7 +109,6 @@ void GameObject::Translate(glm::vec2 trans_)
 	SetPosition(position + trans_);
 }
 
-//TODO: finish the response peter
 void GameObject::CollisionResponse(GameObject* obj)
 {
 	physics.RigidbodyCollision(obj);

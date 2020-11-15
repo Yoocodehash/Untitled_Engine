@@ -2,7 +2,7 @@
 #include "../Core/CoreEngine.h"
 
 
-Camera::Camera() : position(glm::vec3()), lightSources(std::vector<LightSource*>())
+Camera::Camera() : position(glm::vec3())
 {
 	fieldOfView = 45.0f;
 	forward = glm::vec3(0, 0, 1.0f);
@@ -60,16 +60,6 @@ glm::mat4 Camera::GetPerspective() const
 glm::mat4 Camera::GetOrthographic() const
 {
 	return orthographic;
-}
-
-std::vector<LightSource*> Camera::GetLightSources() const
-{
-	return lightSources;
-}
-
-void Camera::AddLightSource(LightSource* source)
-{
-	lightSources.push_back(source);
 }
 
 glm::vec3 Camera::GetPosition() const
@@ -219,8 +209,5 @@ void Camera::UpdateCameraVectors()
 }
 
 void Camera::OnDestroy() {
-	for (int i = 0; i < lightSources.size(); i++) {
-		delete lightSources[i];
-	}
-	lightSources.clear();
+
 }

@@ -17,23 +17,23 @@ bool TestScene::OnCreate()
 	CoreEngine::GetInstance()->SetCamera(new Camera);
 	CoreEngine::GetInstance()->GetCamera()->SetPosition(glm::vec3(0.0f, 0.0f, 0.0f));
 
-	//CoreEngine::GetInstance()->GetCamera()->AddLightSource(new LightSource(glm::vec3(0.0f, 0.0f, 2.0f), 0.1f, 0.5f, glm::vec3(1.0f, 1.0f, 1.0f)));
-
 	character.OnCreate();
 	character.SetPosition(glm::vec2(200.0f, 200.0f));
 	character.SetScale(glm::vec2(0.10f, 0.10f));
 
+	controller.Init(&character);
+
 	SceneGraph::GetInstance()->AddGameObject(&character);
 
-	grass.OnCreate();
-	grass.SetPosition(glm::vec2(490.0f, 210.0f));
-	grass.SetScale(glm::vec2(0.1f));
-	SceneGraph::GetInstance()->AddGameObject(&grass);
-	
-  controller.Init(&character);
-  
-	if (character.GetBoundingBox().Intersects(&grass.GetBoundingBox())) {
-  }
+	Platform* grass;
+	for (int i = 0; i < 8; i++) {
+		grass = new Platform();
+		grass->OnCreate();
+		grass->SetPosition(glm::vec2(50.0f * i, 0.0f));
+		platforms.push_back(grass);
+		SceneGraph::GetInstance()->AddGameObject(platforms[i]);
+		grass = nullptr;
+	}
 
 
 	return true;

@@ -44,11 +44,6 @@ public:
 	
 	void Exit();
 
-	void NotifyOfMousePressed(glm::vec2 mouse_);
-	void NotifyOfMouseRelease(glm::vec2 mouse_, int buttonType_);
-	void NotifyOfMouseMove(glm::vec2 mouse_);
-	void NotifyOfMouseScroll(int y_);
-
 private:
 	CoreEngine();
 	~CoreEngine();
