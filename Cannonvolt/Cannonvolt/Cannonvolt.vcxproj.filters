@@ -43,12 +43,6 @@
     <Filter Include="Source Files\Engine\Events">
       <UniqueIdentifier>{f435d3d1-f6b0-4bb5-9612-af2b7fc27ef2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Engine\FX">
-      <UniqueIdentifier>{9180b3ce-dcd3-4c9d-bb34-4935507868d7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Engine\FX">
-      <UniqueIdentifier>{96ca12d7-0875-4c40-97ce-9a554e589367}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Engine\Graphics">
       <UniqueIdentifier>{e268e379-06ce-4586-af84-a312a93402d9}</UniqueIdentifier>
     </Filter>
@@ -107,12 +101,6 @@
     </ClCompile>
     <ClCompile Include="Engine\Events\EventListener.cpp">
       <Filter>Source Files\Engine\Events</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\Events\MouseEventListener.cpp">
-      <Filter>Source Files\Engine\Events</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\FX\LightSource.cpp">
-      <Filter>Source Files\Engine\FX</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Math\CollisionDetection.cpp">
       <Filter>Source Files\Engine\Math</Filter>
@@ -196,12 +184,6 @@
     </ClInclude>
     <ClInclude Include="Engine\Events\EventListener.h">
       <Filter>Header Files\Engine\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\Events\MouseEventListener.h">
-      <Filter>Header Files\Engine\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\FX\LightSource.h">
-      <Filter>Header Files\Engine\FX</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Math\BoundingBox.h">
       <Filter>Header Files\Engine\Math</Filter>

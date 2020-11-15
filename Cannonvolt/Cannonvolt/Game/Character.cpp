@@ -13,6 +13,7 @@ Character::~Character()
 
 bool Character::OnCreate()
 {
+	SetTag("Mario");
 	return true;
 }
 
@@ -27,4 +28,12 @@ void Character::Shot()
 	SceneGraph::GetInstance()->AddGameObject(&fire);
 }
 
+void Character::CollisionResponse(GameObject* obj)
+{
 
+	if ( GetBoundingBox().CollisionDepth(&obj->GetBoundingBox()).y < 0)
+	{
+	}
+
+	GameObject::CollisionResponse(obj);
+}

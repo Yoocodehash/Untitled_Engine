@@ -91,13 +91,11 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\danny\Documents\GitHub\Untitled_Engine\Cannonvolt\Linking\OpenGL\include;C:\Users\danny\Documents\GitHub\Untitled_Engine\Cannonvolt\Linking\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL2.lib;SDL2_image.lib;SDL2main.lib;SDL2test.lib;glew32.lib;glew32s.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\danny\Documents\GitHub\Untitled_Engine\Cannonvolt\Linking\SDL\lib;C:\Users\danny\Documents\GitHub\Untitled_Engine\Cannonvolt\Linking\OpenGL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -156,8 +154,6 @@
     <ClCompile Include="Engine\Core\Window.cpp" />
     <ClCompile Include="Engine\Events\EventListener.cpp" />
     <ClCompile Include="Engine\Events\KeyEventListener.cpp" />
-    <ClCompile Include="Engine\Events\MouseEventListener.cpp" />
-    <ClCompile Include="Engine\FX\LightSource.cpp" />
     <ClCompile Include="Engine\Graphics\ShaderHandler.cpp" />
     <ClCompile Include="Engine\Graphics\TextureHandler.cpp" />
     <ClCompile Include="Engine\Math\AI.cpp" />
@@ -187,8 +183,6 @@
     <ClInclude Include="Engine\Core\Window.h" />
     <ClInclude Include="Engine\Events\EventListener.h" />
     <ClInclude Include="Engine\Events\KeyEventListener.h" />
-    <ClInclude Include="Engine\Events\MouseEventListener.h" />
-    <ClInclude Include="Engine\FX\LightSource.h" />
     <ClInclude Include="Engine\Graphics\ShaderHandler.h" />
     <ClInclude Include="Engine\Graphics\TextureHandler.h" />
     <ClInclude Include="Engine\Math\AI.h" />

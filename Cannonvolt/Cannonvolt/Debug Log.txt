@@ -1,3 +1,10 @@
 [INFO]: Creating Game Scene in file: GameScene.cpp on line: 15
 [WARNING]: Trying to add a GameObject with a tag GameObject that already exist. in file: SceneGraph.cpp on line: 24
-[INFO]: Everything was created okay in file: CoreEngine.cpp on line: 46
+[WARNING]: Trying to add a GameObject with a tag GameObject that already exist. in file: SceneGraph.cpp on line: 24
+[WARNING]: Trying to add a GameObject with a tag GameObject that already exist. in file: SceneGraph.cpp on line: 24
+[WARNING]: Trying to add a GameObject with a tag GameObject that already exist. in file: SceneGraph.cpp on line: 24
+[WARNING]: Trying to add a GameObject with a tag GameObject that already exist. in file: SceneGraph.cpp on line: 24
+[WARNING]: Trying to add a GameObject with a tag GameObject that already exist. in file: SceneGraph.cpp on line: 24
+[WARNING]: Trying to add a GameObject with a tag GameObject that already exist. in file: SceneGraph.cpp on line: 24
+[WARNING]: Trying to add a GameObject with a tag GameObject that already exist. in file: SceneGraph.cpp on line: 24
+[INFO]: Everything was created okay in file: CoreEngine.cpp on line: 43

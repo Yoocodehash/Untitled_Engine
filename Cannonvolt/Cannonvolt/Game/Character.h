@@ -10,15 +10,11 @@ public:
 
 	virtual bool OnCreate();
 	virtual void Update(const float deltaTime_) override;
-
+  
 	void Shot();
-
 private:
 	FireBall fire;
-
+	virtual void CollisionResponse(GameObject* obj) override;
 };
 
-
 #endif // !Character_h
-
-/* I think the function i need in Key thing is Apply is called ApplyVelocity */

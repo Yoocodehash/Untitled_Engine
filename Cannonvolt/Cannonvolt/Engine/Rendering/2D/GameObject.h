@@ -32,7 +32,7 @@ public:
 
 	void Translate(glm::vec2 trans_); // Move object by the parameter
 
-	void CollisionResponse(GameObject* obj);
+	virtual void CollisionResponse(GameObject* obj);
 
 	//Physics Functions
 

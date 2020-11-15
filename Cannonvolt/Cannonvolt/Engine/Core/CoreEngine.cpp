@@ -25,10 +25,7 @@ bool CoreEngine::OnCreate(std::string name_, int width_, int height_)
 		return isRunning = false;
 	}
 
-	
 	SDL_WarpMouseInWindow(window->GetWindow(), window->GetWidth() / 2, window->GetHeight() / 2);
-
-	MouseEventListener::RegisterEngineObject(this);
 
 	ShaderHandler::GetInstance()->CreateProgram("basicShader",
 		"Engine/Shaders/VertexShader.glsl",
@@ -154,26 +151,5 @@ void CoreEngine::Exit()
 	isRunning = false;
 }
 
-void CoreEngine::NotifyOfMousePressed(glm::vec2 mouse_)
-{
-	
-}
 
-void CoreEngine::NotifyOfMouseRelease(glm::vec2 mouse_, int buttonType_)
-{
-	CollisionHandler::GetInstance()->MouseUpdate(mouse_, buttonType_);
-}
 
-void CoreEngine::NotifyOfMouseMove(glm::vec2 mouse_)
-{
-	if (camera) {
-		camera->ProcessMouseMovement(MouseEventListener::GetMouseOffset());
-	}
-}
-
-void CoreEngine::NotifyOfMouseScroll(int y_)
-{
-	if (camera) {
-		camera->ProcessMouseScroll(y_);
-	}
-}
