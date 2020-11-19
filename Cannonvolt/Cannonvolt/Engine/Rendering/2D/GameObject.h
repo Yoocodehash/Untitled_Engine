@@ -34,6 +34,8 @@ public:
 
 	virtual void CollisionResponse(GameObject* obj);
 
+	void Flip(bool invert_);
+
 	//Physics Functions
 
 	void ApplyVelocity(glm::vec2 force_);
@@ -41,8 +43,6 @@ public:
 	bool IsStatic() const;
 
 	void SetStatic(bool static_);
-
-	void Flip(bool invert_);
 
 private:
 	Sprite* sprite;
