@@ -7,7 +7,7 @@ public:
 	Platformer();
 	~Platformer();
 
-	virtual bool Initilize();
-	virtual void Update(const float deltaTime_);
+	virtual bool Initilize() override;
+	virtual void Update(const float deltaTime_) override;
 
 };

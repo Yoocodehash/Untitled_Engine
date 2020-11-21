@@ -4,7 +4,6 @@
 #include <sstream>
 #include "../../Camera/Camera.h"
 #include "Sprite.h"
-#include "../../Math/AI.h"
 #include "../../Math/Physics.h"
 
 

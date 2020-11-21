@@ -5,8 +5,11 @@
 class Modular_Base{
 
 public:	
-	virtual bool Initilize() = 0;
-	virtual void Update(const float deltaTime_) = 0;
+	Modular_Base() {};
+	virtual ~Modular_Base() {};
+
+	virtual bool Initilize() { return true; };
+	virtual void Update(const float deltaTime_) {};
 
 };
 

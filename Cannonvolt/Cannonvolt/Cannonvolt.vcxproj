@@ -148,7 +148,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AITest.cpp" />
     <ClCompile Include="Engine\Camera\Camera.cpp" />
     <ClCompile Include="Engine\Core\CoreEngine.cpp" />
     <ClCompile Include="Engine\Core\Debug.cpp" />
@@ -158,8 +157,6 @@
     <ClCompile Include="Engine\Events\KeyEventListener.cpp" />
     <ClCompile Include="Engine\Graphics\ShaderHandler.cpp" />
     <ClCompile Include="Engine\Graphics\TextureHandler.cpp" />
-    <ClCompile Include="Engine\Math\AI.cpp" />
-    <ClCompile Include="Engine\Math\CollisionDetection.cpp" />
     <ClCompile Include="Engine\Math\CollisionHandler.cpp" />
     <ClCompile Include="Engine\Math\Physics.cpp" />
     <ClCompile Include="Engine\Modules\Platformer.cpp" />
@@ -189,12 +186,9 @@
     <ClInclude Include="Engine\Events\KeyEventListener.h" />
     <ClInclude Include="Engine\Graphics\ShaderHandler.h" />
     <ClInclude Include="Engine\Graphics\TextureHandler.h" />
-    <ClInclude Include="Engine\Math\AI.h" />
     <ClInclude Include="Engine\Math\BoundingBox.h" />
-    <ClInclude Include="Engine\Math\CollisionDetection.h" />
     <ClInclude Include="Engine\Math\CollisionHandler.h" />
     <ClInclude Include="Engine\Math\Physics.h" />
-    <ClInclude Include="Engine\Math\Ray.h" />
     <ClInclude Include="Engine\Modules\Modular_Base.h" />
     <ClInclude Include="Engine\Modules\Platformer.h" />
     <ClInclude Include="Engine\Rendering\2D\GameObject.h" />

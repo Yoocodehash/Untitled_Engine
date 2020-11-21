@@ -102,9 +102,6 @@
     <ClCompile Include="Engine\Events\EventListener.cpp">
       <Filter>Source Files\Engine\Events</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Math\CollisionDetection.cpp">
-      <Filter>Source Files\Engine\Math</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\Math\CollisionHandler.cpp">
       <Filter>Source Files\Engine\Math</Filter>
     </ClCompile>
@@ -135,13 +132,7 @@
     <ClCompile Include="Engine\Events\KeyEventListener.cpp">
       <Filter>Source Files\Engine\Events</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Math\AI.cpp">
-      <Filter>Source Files\Engine\Math</Filter>
-    </ClCompile>
     <ClCompile Include="Game\Platform.cpp">
-      <Filter>Source Files\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="AITest.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
     <ClCompile Include="InputControl.cpp">
@@ -194,13 +185,7 @@
     <ClInclude Include="Engine\Math\BoundingBox.h">
       <Filter>Header Files\Engine\Math</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Math\CollisionDetection.h">
-      <Filter>Header Files\Engine\Math</Filter>
-    </ClInclude>
     <ClInclude Include="Engine\Math\CollisionHandler.h">
-      <Filter>Header Files\Engine\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\Math\Ray.h">
       <Filter>Header Files\Engine\Math</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Rendering\SceneGraph.h">
@@ -229,9 +214,6 @@
     </ClInclude>
     <ClInclude Include="Engine\Events\KeyEventListener.h">
       <Filter>Header Files\Engine\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\Math\AI.h">
-      <Filter>Header Files\Engine\Math</Filter>
     </ClInclude>
     <ClInclude Include="Game\Platform.h">
       <Filter>Header Files\Game</Filter>
