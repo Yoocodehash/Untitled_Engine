@@ -22,8 +22,9 @@ bool TestScene::OnCreate()
 	character.SetScale(glm::vec2(0.10f, 0.10f));
 
 	controller.Init(&character);
+	gameManger.OnCreate(&character);
 
-	SceneGraph::GetInstance()->AddGameObject(&character);
+	SceneGraph::GetInstance()->AddGameObject(&character, "Mario");
 
 	Platform* grass;
 	for (int i = 0; i < 8; i++) {
@@ -35,6 +36,8 @@ bool TestScene::OnCreate()
 		grass = nullptr;
 	}
 
+	spike.OnCreate(glm::vec2(40, 40));
+	SceneGraph::GetInstance()->AddGameObject(&spike, "Spike");
 
 	return true;
 }
@@ -42,6 +45,7 @@ bool TestScene::OnCreate()
 void TestScene::Update(const float deltaTime_)
 {
 	controller.Update(deltaTime_);
+	gameManger.Update();
 }
 
 void TestScene::Draw()

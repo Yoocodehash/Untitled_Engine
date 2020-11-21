@@ -2,6 +2,7 @@
 #include "Window.h"
 #include "Debug.h"
 #include "Scene.h"
+#include "../../Game/Character.h"
 
 std::unique_ptr<CoreEngine> CoreEngine::engineInstance = nullptr;
 
@@ -14,7 +15,7 @@ CoreEngine::~CoreEngine()
 	OnDestroy();
 }
 
-bool CoreEngine::OnCreate(std::string name_, int width_, int height_)
+bool CoreEngine::OnCreate(std::string name_, int width_, int height_, std::vector<Modular_Base> mods)
 {
 	Debug::DebugInit("Debug Log");
 	Debug::SetSeverity(MessageType::TYPE_INFO);
@@ -42,6 +43,12 @@ bool CoreEngine::OnCreate(std::string name_, int width_, int height_)
 
 	Debug::Info("Everything was created okay", "CoreEngine.cpp", __LINE__);
 
+	Character::LoadMods();
+
+
+	for (auto m : mods) {
+		m.Initilize();
+	}
 
 	return isRunning = true;
 }

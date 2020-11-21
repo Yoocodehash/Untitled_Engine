@@ -4,19 +4,12 @@
 
 class FireBall : public GameObject {
 public:
-	FireBall();
+	FireBall(glm::vec2 position_, float angle_);
 	 ~FireBall();
 
-	 bool OnCreate(glm::vec2 position_, float angle_);
 	 void Update(const float deltaTime_) override;
+
+	 virtual void CollisionResponse(GameObject* obj) override;
 
 };
 #endif // !FireBall_h
-
-
-
-
-/* #pragma once
-class FireBall
-{
-}; */

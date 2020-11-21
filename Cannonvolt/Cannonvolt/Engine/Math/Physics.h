@@ -24,10 +24,14 @@ public:
 
 	void Gravity(const float deltaTime);
 
+	void ApplyForce(glm::vec2 force_);
+
 private:
 	GameObject* parent;
 
 	glm::vec2 velocity, acceleration;
+
+	float angularVelocity, angularAcceleration;
 
 	bool isStatic;
 

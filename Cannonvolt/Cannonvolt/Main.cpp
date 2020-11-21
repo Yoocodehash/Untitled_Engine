@@ -1,11 +1,17 @@
 #include "Engine/Core/CoreEngine.h"
 #include "Game/SceneManager.h"
+#include "Engine/Modules/Platformer.h"
 
 int main(int argc, char* argv[]) {
 	//Set game interface here 
 	CoreEngine::GetInstance()->SetGameInterface(new SceneManager);
 
-	if (!CoreEngine::GetInstance()->OnCreate("Game211 Midstone", 800, 600)) {
+	std::vector<Modular_Base> mods;
+	mods.reserve(3);
+	Platformer plat;
+	mods.push_back(plat);
+
+	if (!CoreEngine::GetInstance()->OnCreate("Game211 Midstone", 800, 600, mods)) {
 		return 0;
 	}
 

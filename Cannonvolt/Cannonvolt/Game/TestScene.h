@@ -5,6 +5,8 @@
 #include "Character.h"
 #include "Platform.h"
 //#include "../Engine/Rendering/SceneGraph.h"
+#include "Spike.h"
+#include "GameManger.h"
 class TestScene : public Scene 
 {
 public:
@@ -17,7 +19,10 @@ public:
 
 	Character character;
 	InputControl controller;
+	GameManager gameManger;
 
 	std::vector<Platform*> platforms;
+
+	Spike spike;
 };
 

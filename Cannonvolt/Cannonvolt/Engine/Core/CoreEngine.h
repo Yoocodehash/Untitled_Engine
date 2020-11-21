@@ -17,6 +17,7 @@
 #include "../Camera/Camera.h"
 
 #include "../Events/EventListener.h"
+#include "../Modules/Modular_Base.h"
 
 
 
@@ -28,7 +29,7 @@ public:
 	CoreEngine& operator =(const CoreEngine&) = delete;
 	CoreEngine& operator =(CoreEngine&&) = delete;
 
-	bool OnCreate(std::string name_, int width_, int height_);
+	bool OnCreate(std::string name_, int width_, int height_, std::vector<Modular_Base> mods);
 	void Run();
 	bool GetIsRunning() const;
 
