@@ -34,6 +34,7 @@ public:
 
     glm::vec2 GetDimentions() const;
     glm::vec2 GetScale() const;
+    bool GetFlip() const;
 
     void SetScale(glm::vec2 scale_);
 
