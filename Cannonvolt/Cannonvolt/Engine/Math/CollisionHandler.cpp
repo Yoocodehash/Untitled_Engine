@@ -51,9 +51,9 @@ void CollisionHandler::AABB()
 	//this is will save time by preventing re checks, though the question of double checking effects may be something
 	//to consider for more advanced collision idea's.
 
-	for (int i = 0; i < gameObjects.size(); i++) {
+	for (size_t i = 0; i < gameObjects.size(); i++) {
 		if (!gameObjects[i]->IsStatic()) {
-			for (int j = i + 1; j < gameObjects.size(); j++) {
+			for (size_t j = i + 1; j < gameObjects.size(); j++) {
 				if (gameObjects[i]->GetBoundingBox().Intersects(&gameObjects[j]->GetBoundingBox())) {
 					gameObjects[i]->CollisionResponse(gameObjects[j]);
 				}

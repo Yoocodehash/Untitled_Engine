@@ -67,8 +67,3 @@ void Character::CollisionResponse(GameObject* obj)
 	}
 	GameObject::CollisionResponse(obj);
 }
-
-void OnCollisionEnter(Collision collision) {
-	Destroy(collision.collider.gameObject);
-	Destroy(gameObject);
-}

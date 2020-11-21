@@ -6,10 +6,9 @@ int main(int argc, char* argv[]) {
 	//Set game interface here 
 	CoreEngine::GetInstance()->SetGameInterface(new SceneManager);
 
-	std::vector<Modular_Base> mods;
+	std::vector<Modular_Base*> mods;
 	mods.reserve(3);
-	Platformer plat;
-	mods.push_back(plat);
+	mods.push_back(new Platformer());
 
 	if (!CoreEngine::GetInstance()->OnCreate("Game211 Midstone", 800, 600, mods)) {
 		return 0;

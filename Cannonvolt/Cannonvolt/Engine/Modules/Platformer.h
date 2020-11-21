@@ -5,9 +5,11 @@
 class Platformer : public Modular_Base {
 public: 
 	Platformer();
-	~Platformer();
+	virtual ~Platformer();
 
 	virtual bool Initilize() override;
 	virtual void Update(const float deltaTime_) override;
+
+	bool a;
 
 };

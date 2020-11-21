@@ -15,7 +15,7 @@ CoreEngine::~CoreEngine()
 	OnDestroy();
 }
 
-bool CoreEngine::OnCreate(std::string name_, int width_, int height_, std::vector<Modular_Base> mods)
+bool CoreEngine::OnCreate(std::string name_, int width_, int height_, std::vector<Modular_Base*> mods)
 {
 	Debug::DebugInit("Debug Log");
 	Debug::SetSeverity(MessageType::TYPE_INFO);
@@ -45,9 +45,8 @@ bool CoreEngine::OnCreate(std::string name_, int width_, int height_, std::vecto
 
 	Character::LoadMods();
 
-
-	for (auto m : mods) {
-		m.Initilize();
+	for(auto m : mods){
+		m->Initilize();
 	}
 
 	return isRunning = true;

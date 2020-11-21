@@ -1,9 +1,7 @@
 #include "InputControl.h"
 #include "Engine/Events/KeyEventListener.h"
 
-
-
-InputControl::InputControl(){
+InputControl::InputControl() {
 
 }
 
@@ -20,27 +18,29 @@ void InputControl::Update(float deltaTime_) {
 	if (player->GetMod("Movement")) {
 		if (KeyEventListener::keyMap[SDLK_a] == true) {
 			player->Flip(true);
-			player->SetPosition(glm::vec2(player->GetPosition() + glm::vec2(-2.0f, 0.0f)));
+			player->Translate(glm::vec2(-2.0f, 0.0f));
 		}
 		if (KeyEventListener::keyMap[SDLK_s]) {
 
 		}
 		if (KeyEventListener::keyMap[SDLK_d]) {
 			player->Flip(false);
-			player->SetPosition(glm::vec2(player->GetPosition() + glm::vec2(2.0f, 0.0f)));
+			player->Translate(glm::vec2(2.0f, 0.0f));
 		}
 		if (KeyEventListener::keyMap[SDLK_w]) {
-
 		}
-	  if (KeyEventListener::keyMap[SDLK_LSHIFT]) {
-		if (player->GetSprite()->GetFlip() == true) {
-			player->SetPosition(glm::vec2(player->GetPosition() + glm::vec2(-10.0f, 0.0f)));
+		if (KeyEventListener::keyMap[SDLK_SPACE]) {
+			player->Translate(glm::vec2(0, 2.0f));
 		}
-		if (player->GetSprite()->GetFlip() == false) {
-			player->SetPosition(glm::vec2(player->GetPosition() + glm::vec2(10.0f, 0.0f)));
+	    if (KeyEventListener::keyMap[SDLK_LSHIFT]) {
+			if (player->GetSprite()->GetFlip() == true) {
+				player->Translate(glm::vec2(-10.0f, 0.0f));
+			}
+			else {
+			player->Translate(glm::vec2(10.0f, 0.0f));
+			}
 		}
 	}
-  }
 	if (KeyEventListener::keyMap[SDLK_f]) {
 		player->Shot();
 	}
