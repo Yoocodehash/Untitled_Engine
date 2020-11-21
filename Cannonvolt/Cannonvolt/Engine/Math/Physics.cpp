@@ -25,12 +25,15 @@ void Physics::Update(const float deltaTime)
 
 	parent->Translate(velocity * deltaTime + (0.5f * acceleration * std::powf(deltaTime, 2)));
 
-	velocity += acceleration * deltaTime;
+
+	//Zero it to require constant force
+	velocity = glm::vec2(0);
 }
 
 void Physics::SetVelocity(glm::vec2 vel_)
 {
-	velocity = vel_;
+	
+	velocity = glm::mat2(cos(parent->GetRotation()), -sin(parent->GetRotation()), sin(parent->GetRotation()), cos(parent->GetRotation())) * vel_;
 }
 
 void Physics::RigidbodyCollision(GameObject* obj)
