@@ -99,6 +99,11 @@ glm::vec2 Sprite::GetScale() const
     return scale;
 }
 
+bool Sprite::GetFlip() const
+{
+    return flip;
+}
+
 void Sprite::SetScale(glm::vec2 scale_)
 {
     scale = spriteSize * scale_;

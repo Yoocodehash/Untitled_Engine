@@ -32,13 +32,15 @@ void InputControl::Update(float deltaTime_) {
 		if (KeyEventListener::keyMap[SDLK_w]) {
 
 		}
-		if (KeyEventListener::keyMap[SDLK_SPACE]) {
-			player->SetPosition(glm::vec2(player->GetPosition() + glm::vec2(0.0f, 2.0f)));
+	  if (KeyEventListener::keyMap[SDLK_LSHIFT]) {
+		if (player->GetSprite()->GetFlip() == true) {
+			player->SetPosition(glm::vec2(player->GetPosition() + glm::vec2(-10.0f, 0.0f)));
 		}
-		if (KeyEventListener::keyMap[SDLK_LSHIFT]) {
-			player->SetPosition(glm::vec2(player->GetPosition() + glm::vec2( /* player direction * */20.0f, 0.0f)));
+		if (player->GetSprite()->GetFlip() == false) {
+			player->SetPosition(glm::vec2(player->GetPosition() + glm::vec2(10.0f, 0.0f)));
 		}
 	}
+  }
 	if (KeyEventListener::keyMap[SDLK_f]) {
 		player->Shot();
 	}
