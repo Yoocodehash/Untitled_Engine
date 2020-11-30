@@ -46,6 +46,7 @@ void TestScene::Update(const float deltaTime_)
 {
 	controller.Update(deltaTime_);
 	gameManger.Update();
+	SceneGraph::GetInstance()->Update(deltaTime_);
 }
 
 void TestScene::Draw()

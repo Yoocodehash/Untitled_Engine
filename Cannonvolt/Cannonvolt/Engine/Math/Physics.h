@@ -22,7 +22,10 @@ public:
 
 	bool GetStatic() const;
 
-	void Gravity(const float deltaTime);
+	void ApplyGravity(bool state);
+
+	void SetRigidBody(bool state);
+	bool GetRigid() const;
 
 	void ApplyForce(glm::vec2 force_);
 
@@ -34,5 +37,8 @@ private:
 	float angularVelocity, angularAcceleration;
 
 	bool isStatic;
+	bool isRigid;
+	
+	glm::vec2 gravity;
 
 };

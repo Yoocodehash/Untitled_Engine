@@ -68,30 +68,13 @@ public:
 		//Coming from the bottom
 		float y2 = otherMaxCorner.y - pos.y;
 
-		bool right = false, up = false;
+		x1 < x2 ? depth.x = -x1 - 0.4f : depth.x = x2 + 0.4f;
 
-		if (x1 < x2) {
-			right = true;
-			depth.x = x1;
-		}
-		else {
-			depth.x = x2;
-		}
+		y1 < y2 ? depth.y = -y1 - 0.4f : depth.y = y2 + 0.4f;
 
-		if (y1 < y2) {
-			up = true;
-			depth.y = y1;
-		}
-		else {
-			depth.y = y2;
-		}
-
-		if (depth.x < depth.y) {
-			return glm::vec2((depth.x + 0.4f) * (right ? -1 : 1), 0.0f);
-		}
-		else {
-			return glm::vec2(0.0f, (depth.y + 0.4f) * (up ? -1 : 1));
-		}
+		depth.x < depth.y ? depth.y = 0 : depth.x = 0;
+		
+		return depth;
 	}
 };
 

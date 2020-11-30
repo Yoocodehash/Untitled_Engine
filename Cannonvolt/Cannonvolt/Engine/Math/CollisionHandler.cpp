@@ -54,7 +54,7 @@ void CollisionHandler::AABB()
 	for (size_t i = 0; i < gameObjects.size(); i++) {
 		if (!gameObjects[i]->IsStatic()) {
 			for (size_t j = i + 1; j < gameObjects.size(); j++) {
-				if (gameObjects[i]->GetBoundingBox().Intersects(&gameObjects[j]->GetBoundingBox())) {
+				if (gameObjects[i]->GetBoundingBox().Intersects(&gameObjects[j]->GetBoundingBox()) && gameObjects[j]->IsRigid()) {
 					gameObjects[i]->CollisionResponse(gameObjects[j]);
 				}
 			}

@@ -6,7 +6,8 @@ GameObject::GameObject(Sprite* sprite_, glm::vec2 position_)
 	position = position_;
 	rotation = 0;
 	scale = glm::vec2(1.0f,1.0);
-	tag = "";
+	tag = "GameObject";
+	name = "GameObject";
 	hit = false;
 
 	if (sprite) {
@@ -61,6 +62,11 @@ std::string GameObject::GetTag() const
 	return tag;
 }
 
+std::string GameObject::GetName() const
+{
+	return name;
+}
+
 bool GameObject::GetHit() const
 {
 	return hit;
@@ -104,6 +110,11 @@ void GameObject::SetHit(bool hit_, int buttonType_)
 	hit = hit_;
 }
 
+void GameObject::SetName(std::string name_)
+{
+	name = name_;
+}
+
 void GameObject::Translate(glm::vec2 trans_)
 {
 	SetPosition(position + trans_);
@@ -129,7 +140,27 @@ void GameObject::SetStatic(bool static_)
 	return physics.SetStatic(static_);
 }
 
+void GameObject::SetGravity(bool grav)
+{
+	physics.ApplyGravity(grav);
+}
+
+bool GameObject::IsRigid() const
+{
+	return physics.GetRigid();
+}
+
+void GameObject::SetRigid(bool rig)
+{
+	physics.SetRigidBody(rig);
+}
+
 void GameObject::Flip(bool invert_)
 {
 	sprite->SetFlip(invert_);
+}
+
+bool GameObject::IsFliped() const
+{
+	return sprite->GetFlip();
 }

@@ -41,8 +41,10 @@ void InputControl::Update(float deltaTime_) {
 			}
 		}
 	}
-	if (KeyEventListener::keyMap[SDLK_f]) {
-		player->Shot();
+	if (player->GetMod("Shoot")) {
+		if (KeyEventListener::keyMap[SDLK_f]) {
+			player->Shot();
+		}
 	}
 }
 /*Calls the KeyEventListener, grabs the keyMap and responds to pressing the spacebar [SDLK_SPACE]
