@@ -35,7 +35,6 @@ void Physics::SetVelocity(glm::vec2 vel_)
 {
 	velocity = glm::mat2(glm::cos(glm::radians(parent->GetRotation())), -glm::sin(glm::radians(parent->GetRotation())),
 						 glm::sin(glm::radians(parent->GetRotation())), glm::cos(glm::radians(parent->GetRotation()))) * vel_;
-}
 
 void Physics::RigidbodyCollision(GameObject* obj)
 {

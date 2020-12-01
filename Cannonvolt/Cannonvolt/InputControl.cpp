@@ -45,6 +45,14 @@ void InputControl::Update(float deltaTime_) {
 		if (KeyEventListener::keyMap[SDLK_f]) {
 			player->Shot();
 		}
+	if (player->GetMod("Flight")) {
+		player->ApplyVelocity(glm::vec2(100.0f, 0.0f));
+			if (KeyEventListener::keyMap[SDLK_d]) {
+				player->SetRotation(player->GetRotation() + 1);
+			}
+			if (KeyEventListener::keyMap[SDLK_a]) {
+				player->SetRotation(player->GetRotation() - 1);
+			}
 	}
 }
 /*Calls the KeyEventListener, grabs the keyMap and responds to pressing the spacebar [SDLK_SPACE]

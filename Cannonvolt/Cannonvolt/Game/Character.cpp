@@ -43,6 +43,8 @@ void Character::LoadMods()
 	modules["Movement"] = false;
 	modules["Jump"] = false;
 	modules["Shoot"] = false;
+=======
+	modules["Flight"] = false;
 }
 
 bool Character::GetMod(std::string name_)
