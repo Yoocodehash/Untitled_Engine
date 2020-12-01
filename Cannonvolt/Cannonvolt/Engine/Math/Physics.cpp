@@ -33,7 +33,7 @@ void Physics::Update(const float deltaTime)
 void Physics::SetVelocity(glm::vec2 vel_)
 {
 	
-	velocity = glm::mat2(cos(parent->GetRotation()), -sin(parent->GetRotation()), sin(parent->GetRotation()), cos(parent->GetRotation())) * vel_;
+	velocity = glm::mat2(cos(glm::radians(parent->GetRotation())), -sin(glm::radians(parent->GetRotation())), sin(glm::radians(parent->GetRotation())), cos(glm::radians(parent->GetRotation()))) * vel_;
 }
 
 void Physics::RigidbodyCollision(GameObject* obj)
