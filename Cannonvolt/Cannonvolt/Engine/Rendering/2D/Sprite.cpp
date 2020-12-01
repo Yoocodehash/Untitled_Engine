@@ -89,7 +89,7 @@ GLuint Sprite::GetShaderProgram() const
     return shaderProgram;
 }
 
-glm::vec2 Sprite::GetDimentions() const
+glm::vec2 Sprite::GetDimensions() const
 {
     return spriteSize;
 }

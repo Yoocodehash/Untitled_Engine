@@ -32,7 +32,7 @@ public:
     BoundingBox GetBoundingBox();
     GLuint GetShaderProgram() const;
 
-    glm::vec2 GetDimentions() const;
+    glm::vec2 GetDimensions() const;
     glm::vec2 GetScale() const;
     bool GetFlip() const;
 
