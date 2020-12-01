@@ -12,6 +12,7 @@ Platform::~Platform()
 bool Platform::OnCreate()
 {
 	SetStatic(true);
+	SetRigid(true);
 	SetScale(glm::vec2(10.0f));
 
 	return true;

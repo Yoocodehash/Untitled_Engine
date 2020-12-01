@@ -10,6 +10,7 @@ Window::Window() :window(nullptr), width(0), height(0)
 
 Window::~Window()
 {
+	OnDestroy();
 }
 
 bool Window::OnCreate(std::string name_, int width_, int height_)
@@ -47,8 +48,6 @@ bool Window::OnCreate(std::string name_, int width_, int height_)
 
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	
-	//glEnable(GL_DEPTH_TEST);
 
 	glViewport(0, 0, width, height);
 

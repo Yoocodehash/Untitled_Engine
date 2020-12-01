@@ -17,10 +17,10 @@ public:
 	SceneGraph& operator =(SceneGraph&&) = delete;
 
 	static SceneGraph* GetInstance();
-	void AddGameObject(GameObject* go_, std::string tag_ = "GameObject");
-	void RemoveGameObject(std::string tag_);
+	void AddGameObject(GameObject* go_, std::string name_ = "GameObject");
+	void RemoveGameObject(std::string name_);
 	
-	GameObject* GetGameObject(std::string tag_);
+	GameObject* GetGameObject(std::string name_);
 	void Update(const float deltaTime_);
 	void Draw(Camera* camera_);
 	void OnDestroy();

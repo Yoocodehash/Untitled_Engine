@@ -12,8 +12,9 @@ Platformer::~Platformer()
 bool Platformer::Initilize()
 {
 	//Here go to all the classes that need it and set to on the functions that need it.
-	Character::SetMod("Movement", false);
-	Character::SetMod("Flight", true);
+	Character::SetMod("Movement", true);
+	Character::SetMod("Jump", true);
+	Character::SetMod("Shoot", true);
 	
 	return true;
 }

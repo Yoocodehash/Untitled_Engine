@@ -7,6 +7,7 @@ std::map<std::string, bool> Character::modules = std::map<std::string, bool>();
 
 Character::Character() : GameObject(new Sprite(ShaderHandler::GetInstance()->GetShader("basicShader"),"Mario", this)) {
 
+
 }
 
 Character::~Character()
@@ -17,6 +18,8 @@ Character::~Character()
 bool Character::OnCreate()
 {
 	SetTag("Mario");
+	SetGravity(true);
+	SetRigid(true);
 	return true;
 }
 
@@ -38,6 +41,9 @@ void Character::Kill()
 void Character::LoadMods()
 {
 	modules["Movement"] = false;
+	modules["Jump"] = false;
+	modules["Shoot"] = false;
+=======
 	modules["Flight"] = false;
 }
 
@@ -51,20 +57,13 @@ void Character::SetMod(std::string name_, bool state_)
 	modules[name_] = state_;
 }
 
+//TODO: math is wrong for rotation.
 void Character::Shot()
 {
-	SceneGraph::GetInstance()->AddGameObject(&FireBall(GetPosition(), GetRotation()));
+	SceneGraph::GetInstance()->AddGameObject(new FireBall(GetPosition(), GetRotation() + IsFliped() ? 180 : 0),"FireBall");
 }
 
 void Character::CollisionResponse(GameObject* obj)
 {
-
-	if ( GetBoundingBox().CollisionDepth(&obj->GetBoundingBox()).y < 0)
-	{
-		SceneGraph::GetInstance()->RemoveGameObject(obj->GetTag());
-
-		return;
-
-	}
 	GameObject::CollisionResponse(obj);
 }

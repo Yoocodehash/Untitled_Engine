@@ -221,9 +221,6 @@
     <ClInclude Include="Game\Platform.h">
       <Filter>Header Files\Game</Filter>
     </ClInclude>
-    <ClInclude Include="AITest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="InputControl.h">
       <Filter>Header Files\Engine\Events</Filter>
     </ClInclude>
