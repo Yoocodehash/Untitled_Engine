@@ -41,6 +41,15 @@ void InputControl::Update(float deltaTime_) {
 			}
 		}
 	}
+	if (player->GetMod("Flight")) {
+		player->ApplyVelocity(glm::vec2(100.0f, 0.0f));
+			if (KeyEventListener::keyMap[SDLK_d]) {
+				player->SetRotation(player->GetRotation() + 1);
+			}
+			if (KeyEventListener::keyMap[SDLK_a]) {
+				player->SetRotation(player->GetRotation() - 1);
+			}
+	}
 	if (KeyEventListener::keyMap[SDLK_f]) {
 		player->Shot();
 	}

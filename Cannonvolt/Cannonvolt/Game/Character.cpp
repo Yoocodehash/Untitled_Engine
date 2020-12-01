@@ -38,6 +38,7 @@ void Character::Kill()
 void Character::LoadMods()
 {
 	modules["Movement"] = false;
+	modules["Flight"] = false;
 }
 
 bool Character::GetMod(std::string name_)
